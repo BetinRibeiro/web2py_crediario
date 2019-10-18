@@ -1,0 +1,206 @@
+# -*- coding: utf-8 -*-
+# tente algo como
+
+def listar_vendedores_inicial():
+	proj = db.projeto(request.args(0, cast=int))
+	rows = db(db.vendedor.projeto == request.args(0, cast=int)).select()
+	return locals()
+
+def inserir_vendedor():
+	proj = db.projeto(request.args(0, cast=int))
+	db.vendedor.projeto.default = proj.id
+	db.vendedor.projeto.readable = False
+	db.vendedor.projeto.writable = False
+	merc = db(db.vendedor.projeto==proj.id).select()
+	form = SQLFORM(db.vendedor).process()
+	if form.accepted:
+		response.flash = 'Formulario aceito'
+		redirect(URL('listar_vendedores_inicial', args=proj.id))
+	elif form.errors:
+		response.flash = 'Formulario não aceito'
+	else:
+		response.flash = 'Preencha o formulario'
+	return locals()
+
+
+def alterar_vendedor_inicial():
+	merc = db.vendedor(request.args(0, cast=int))
+	proj = db.projeto(merc.projeto)
+	db.vendedor.projeto.default = proj.id
+	db.vendedor.projeto.readable = False
+	db.vendedor.projeto.writable = False
+	form = SQLFORM(db.vendedor, request.args(0, cast=int))
+	if form.process().accepted:
+		session.flash = 'atualizada'
+		redirect(URL('listar_vendedores_inicial', args=proj.id))
+	elif form.errors:
+		response.flash = 'Erros no formulário!'
+	else:
+		if not response.flash:
+			response.flash = 'Preencha o formulário!'
+	return locals()
+
+def listar_funcionario():
+	proj = db.projeto(request.args(0, cast=int))
+	rows = db(db.funcionario_venda.projeto == request.args(0, cast=int)).select()
+	return locals()
+
+
+def listar_vendedores_venda():
+	proj = db.projeto(request.args(0, cast=int))
+	rows = db(db.vendedor.projeto == request.args(0, cast=int)).select()
+	return locals()
+
+def alterar_vendedor_venda():
+	merc = db.vendedor(request.args(0, cast=int))
+	proj = db.projeto(merc.projeto)
+	db.vendedor.projeto.default = proj.id
+	db.vendedor.projeto.readable = False
+	db.vendedor.projeto.writable = False
+
+	db.vendedor.venda.readable = True
+	db.vendedor.venda.writable = True
+
+	db.vendedor.entradas_venda.readable = True
+	db.vendedor.entradas_venda.writable = True
+
+	db.vendedor.quantidade_fichas.readable = True
+	db.vendedor.quantidade_fichas.writable = True
+
+	db.vendedor.vale_caderno.readable = True
+	db.vendedor.vale_caderno.writable = True
+
+	db.vendedor.complemento_recebido.readable = True
+	db.vendedor.complemento_recebido.writable = True
+	form = SQLFORM(db.vendedor, request.args(0, cast=int))
+	if form.process().accepted:
+		session.flash = 'atualizada'
+		redirect(URL('listar_vendedores_venda', args=proj.id))
+	elif form.errors:
+		response.flash = 'Erros no formulário!'
+	else:
+		if not response.flash:
+			response.flash = 'Preencha o formulário!'
+	return locals()
+
+def subir_dados_vendedor_venda():
+	iid = request.args(0, cast=int)
+	totalfichas = request.args(1)
+	totalentrada = request.args(2)
+	totalvenda = request.args(3)
+	totalcomissao = request.args(4)
+	totalcaderno = request.args(5)
+	totalrecebido = request.args(6)
+	totalvale = request.args(7)
+    ##a cachorrada é aqui tem haver com o recuo
+    
+        proj = db(db.projeto.id == iid).select().first()
+        proj.update_record(total_quantidade_fichas=totalfichas )
+        proj.update_record(total_entradas_venda=totalentrada )
+        proj.update_record(total_venda=totalvenda )
+        proj.update_record(total_comissao_vendedor=totalcomissao )
+        proj.update_record(total_vale_caderno_vendedor=totalcaderno )
+        proj.update_record(total_saldo=totalrecebido )
+        proj.update_record(total_vale_saida_vendedor=totalvale )
+
+        db.projeto.total_quantidade_fichas.readable = True
+        db.projeto.total_quantidade_fichas.writable = False
+        
+        db.projeto.total_entradas_venda.readable = True
+        db.projeto.total_entradas_venda.writable = False
+        
+        db.projeto.total_venda.readable = True
+        db.projeto.total_venda.writable = False
+
+        db.projeto.total_comissao_vendedor.readable = True
+        db.projeto.total_comissao_vendedor.writable = False
+        
+        db.projeto.total_vale_caderno_vendedor.readable = True
+        db.projeto.total_vale_caderno_vendedor.writable = False
+        
+        db.projeto.total_saldo.readable = True
+        db.projeto.total_saldo.writable = False
+        
+        db.projeto.total_vale_saida_vendedor.readable = True
+        db.projeto.total_vale_saida_vendedor.writable = False
+
+	form = SQLFORM(db.projeto, request.args(0, cast=int))
+	if form.process().accepted:
+		session.flash = ' atualizado'
+		redirect(URL('listar_vendedores_venda', args=iid))
+	elif form.errors:
+		response.flash = 'Erros no formulário!'
+	else:
+		if not response.flash:
+			response.flash = 'Preencha o formulário!'
+	return locals()
+
+def inserir_funcionario_venda():
+	proj = db.projeto(request.args(0, cast=int))
+	db.funcionario_venda.projeto.default = proj.id
+	db.funcionario_venda.projeto.readable = False
+	db.funcionario_venda.projeto.writable = False
+	merc = db(db.funcionario_venda.projeto==proj.id).select()
+	form = SQLFORM(db.funcionario_venda).process()
+	if form.accepted:
+		response.flash = 'Formulario aceito'
+		redirect(URL('listar_funcionario', args=proj.id))
+	elif form.errors:
+		response.flash = 'Formulario não aceito'
+	else:
+		response.flash = 'Preencha o formulario'
+	return locals()
+
+
+def alterar_funcionario_venda():
+	merc = db.funcionario_venda(request.args(0, cast=int))
+	proj = db.projeto(merc.projeto)
+	db.funcionario_venda.projeto.default = proj.id
+	db.funcionario_venda.projeto.readable = False
+	db.funcionario_venda.projeto.writable = False
+
+	form = SQLFORM(db.funcionario_venda, request.args(0, cast=int))
+	if form.process().accepted:
+		session.flash = 'atualizada'
+		redirect(URL('listar_funcionario', args=proj.id))
+	elif form.errors:
+		response.flash = 'Erros no formulário!'
+	else:
+		if not response.flash:
+			response.flash = 'Preencha o formulário!'
+	return locals()
+
+
+def subir_dados_funcionario_venda():
+	iid = request.args(0, cast=int)
+	salariofunc = request.args(1)
+	vale = request.args(2)
+	caderno = request.args(3)
+    
+    ##a cachorrada é aqui tem haver com o recuo
+    
+        proj = db(db.projeto.id == iid).select().first()
+        proj.update_record(total_salario=salariofunc )
+        proj.update_record(total_vale_saida_funcionario=vale )
+        proj.update_record(total_vale_caderno_funcionario=caderno )
+        
+        db.projeto.total_salario.readable = True
+        db.projeto.total_salario.writable = False
+        
+        db.projeto.total_vale_saida_funcionario.readable = True
+        db.projeto.total_vale_saida_funcionario.writable = False
+    
+        db.projeto.total_vale_caderno_funcionario.readable = True
+        db.projeto.total_vale_caderno_funcionario.writable = False
+
+        
+	form = SQLFORM(db.projeto, request.args(0, cast=int))
+	if form.process().accepted:
+		session.flash = ' atualizado'
+		redirect(URL('listar_funcionario', args=iid))
+	elif form.errors:
+		response.flash = 'Erros no formulário!'
+	else:
+		if not response.flash:
+			response.flash = 'Preencha o formulário!'
+	return locals()

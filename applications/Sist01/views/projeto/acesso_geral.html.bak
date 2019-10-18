@@ -1,0 +1,35 @@
+{{extend 'layout.html'}}<div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Projeto de Venda</h2>
+            <blockquote>
+              <p>{{=proj.nome}}</p>
+              <footer>{{=proj.primeira_cidade}}</footer>
+            </blockquote>
+            <ul class="list-group">
+              <li class="list-group-item"><a href="{{=URL('prestacao_venda', args=proj.id)}}">Prestação de Contas Venda</a></li>
+              <li class="list-group-item"><a href="{{=URL('relatorio_investimento', args=proj.id)}}">Relatorio de Investimento</a></li>
+              <li class="list-group-item">Prestação de Contas Cobrança</li>
+              <li class="list-group-item">Demonstrativo Regular Exercicio</li>
+              <li class="list-group-item">Despesas Locais</li>
+            </ul>
+          </div>
+          <div class="col-md-8">
+            <h3>Detalhamento de Dados</h3>
+            <ul class="list-group">
+              <li class="list-group-item">Mercadoria Enviada</li>
+              <li class="list-group-item">Equipe (Dados Iniciais)</li>
+              <li class="list-group-item">Despesa da Venda</li>
+              <li class="list-group-item">Mercadoria Retorno</li>
+              <li class="list-group-item">Funcionarios da Venda</li>
+              <li class="list-group-item">Equipe (chegada da Venda)</li>
+              <li class="list-group-item">Depositos da Cobrança</li>
+              <li class="list-group-item">Despesa da Cobrança</li>
+              <li class="list-group-item">Equipe (Chegada da Cobrança)</li>
+              <li class="list-group-item">Equipe (Saldo Quitação)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>

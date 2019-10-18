@@ -1,0 +1,118 @@
+{{extend 'layout.html'}}
+<center style="background-color: #333; color:white; padding:30px">
+    <h3>Recursos Empresariais</h3>
+</center>
+
+      <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+              <center>
+              <---<img src="{{=URL('static','images/2.png')}}" class="center-block img-responsive img-thumbnail">
+              </center>
+          </div>
+        </div>
+      </div>
+    </div><br><br>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="thumbnail">
+              <img src="{{=URL('static','images/3.png')}}" class="center-block img-responsive img-thumbnail">
+              <div class="caption">
+                <h3>Planejamento de Recursos Empresariais ou planeamento de recurso corporativo</h3>
+                <p>O ERP é uma plataforma de software desenvolvida para integrar os diversos departamentos de uma empresa, possibilitando a automação e armazenamento de todas as informações do negócio.</p>
+                  <p>
+                      Com a capacidade de integração dos módulos, é possível diagnosticar as áreas mais e menos eficientes e focar em processos que possam ter o desempenho melhorado com a ajuda do conjunto de sistemas.
+                  </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="thumbnail">
+              <img src="{{=URL('static','images/4.png')}}" class="center-block img-responsive img-thumbnail">
+              <div class="caption">
+                <h3>Os processos de negócio</h3>
+                <p>Os processos de negócio podem ser definidos como um conjunto de tarefas e procedimentos interdependentes, realizados para alcançar um determinado resultado empresarial, sendo uma de suas características a transposição de fronteiras organizacionais, logo a integração da empresa é facilitada pelo uso de ERP através de alguns fatores, como a possibilidade da empresa operar com um único sistema de informação que atenda a todas as suas áreas, com o armazenamento dos dados em um banco de dados único e centralizado e a orientação a processos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br>
+     <div class="col-md-12">
+            <hr>
+          </div>
+<br>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+    <h3>Algumas Vantagens</h3>
+                    <ul class="list-group">
+                      <li class="list-group-item">Qualidade e eficácia </li>
+<li class="list-group-item">Redução de custos </li>
+<li class="list-group-item">Agilidade empresarial </li>
+<li class="list-group-item">Eliminar o uso de interfaces manuais </li>
+<li class="list-group-item">Otimizar o fluxo da informação </li>
+<li class="list-group-item">Otimizar o processo de tomada de decisão </li>
+<li class="list-group-item">Eliminar a redundância de atividades </li>
+<li class="list-group-item">Reduzir os limites de tempo de resposta ao mercado </li>
+<li class="list-group-item">Reduzir as incertezas do Lead time </li>
+
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                       <hr>
+                    <blockquote>
+                      <p>Area Juridico Legal</p>
+                      <footer>Conhecendo seu negocio</footer>
+                    </blockquote>
+                       <hr>
+                    <p>Contabilidade
+                      <br>A contabilidade de custos é o ramo da contabilidade que se destina a produzir informações para diversos níveis gerenciais de uma entidade, como auxílio às funções de determinação de desempenho, e de planejamento e controle das operações e de tomada de decisões, bem como tornar possível a alocação mais criteriosamente</p>
+
+ <hr>
+                <div class="row">
+                      <div class="col-md-3">
+                    <img src="{{=URL('static','images/6.jpg')}}" class="img-circle img-responsive">
+                  </div>
+                  <div class="col-md-9">
+                    <h5 class="text-left">Desenvolvedor Rogoberto R.</h5>
+                      <p class="text-left">Tecnico em Produção, técnico em montagem e manutenção de computador desenvolvedor web tecnologia paython.</p></div>
+                    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><br><br>
+<center style="background-color: #333; color:white; padding:30px" class="section section-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h1>Implementação do Sistema</h1>
+
+            <p>A contabilidade de custos consiste na aplicação da técnica
+              <br>contabilística aos fenômenos internos da empresa, que ocorrem
+              <br>na área da produção, comercial, administrativa, financeira</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="text-info text-right">
+              <br>
+              <br>
+            </p>
+              <img src="{{=URL('static','images/5.png')}}" class="center-block img-responsive img-thumbnail">
+            <div class="row">
+                <center style="background-color: #333; color:white; padding:30px">
+
+            </div>
+          </div>
+        </div>
+      </div>
+          </center>

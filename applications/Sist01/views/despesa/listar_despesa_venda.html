@@ -1,0 +1,44 @@
+{{extend 'layout.html'}}
+
+
+<div class="section">
+      <div class="container">
+        <div class="row">
+		<div class="col-md-4">
+		<h2>Lista de Despesas da Venda</h2>
+		{{=proj.nome}}
+		<a class="btn btn-primary btn-block" href="{{=URL('projeto', 'prestacao_venda', args=proj.id)}}"> Voltar</a>
+		<a class="btn btn-secondary btn-block" href="{{=URL('inserir_despesa_venda', args=proj.id)}}">Inserir Despesa</a>
+		</div>
+			<div class="col-md-8">
+<div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Descrição</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+				{{a=0.0}}
+				{{for row in rows:}}
+              <tr>
+                <th>{{=row.descricao}}</th>
+				<th>{{=row.valor}}</th>
+				  {{a=a+row.valor}}
+				  <th><a href="{{=URL('alterar_despesa_venda', args=row.id)}}">Alterar</a></th>
+              </tr>
+              {{pass}}
+				 <tr>
+                <th>Total</th>
+				<th>{{=a}}</th>
+              </tr>
+            </tbody>
+          </table>	
+<div class="col-md-4">
+<a class="btn btn-primary btn-block" href="{{=URL('subir_dados_despesa_venda', args=[proj.id,a])}}">Atualizar Envio</a>
+</div>
+				  </div>
+				</div>
+			  </div>
+			</div>

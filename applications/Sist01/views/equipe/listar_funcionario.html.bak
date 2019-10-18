@@ -1,0 +1,57 @@
+{{extend 'layout.html'}}
+
+<div class="section">
+      <div class="container">
+        <div class="row">
+		<div class="col-md-4">
+		<h2>Lista de Funcionarios da Venda</h2>
+		{{=proj.nome}}
+		<a class="btn btn-primary btn-block" href="{{=URL('projeto', 'prestacao_venda', args=proj.id)}}"> Voltar</a>
+		<a class="btn btn-secondary btn-block" href="{{=URL('inserir_funcionario_venda', args=proj.id)}}">Inserir Funcionario</a>
+		</div>
+			<div class="col-md-8">
+<div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Função</th>
+                <th>Salario</th>
+                <th>Vale</th>
+                <th>Caderno</th>
+                <th>Saldo</th>
+                <th>#</th>
+              </tr>
+            </thead>
+            <tbody>
+				{{salario=0.0}}
+				{{vale=0.0}}
+				{{caderno=0.0}}
+				{{for row in rows:}}
+              <tr>
+                <th>{{=row.nome}}</th>
+                <th>{{=row.funcao}}</th>
+				<th>{{=row.salario}}</th>
+				<th>{{=row.vale_saida}}</th>
+				<th>{{=row.vale_caderno}}</th>
+				<th>{{=row.complemento_recebido}}</th>
+				  <th><a href="{{=URL('alterar_funcionario_venda', args=row.id)}}">Alterar</a></th>
+              </tr>
+                {{salario=salario+row.salario}}
+				{{vale=vale+row.vale_saida}}
+				{{caderno=caderno+row.vale_caderno}}
+              {{pass}}
+				 <tr>
+                <th>Total</th>
+                      <th>--></th>
+				<th>{{=salario}}</th><th>{{=vale}}</th><th>{{=caderno}}</th>
+              </tr>
+            </tbody>
+          </table>
+<div class="col-md-4">
+<a class="btn btn-primary btn-block" href="{{=URL('subir_dados_funcionario_venda', args=[proj.id,salario,vale,caderno])}}">Atualizar Envio</a>
+</div>
+				  </div>
+				</div>
+			  </div>
+			</div>

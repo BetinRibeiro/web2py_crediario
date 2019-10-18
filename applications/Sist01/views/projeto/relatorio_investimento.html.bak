@@ -1,0 +1,72 @@
+{{extend 'layout.html'}}
+<div class="section">
+      <div class="container">
+  <div class="row">
+        <div class="col-md-9" >
+ <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                  {{total=0}}
+                <h6 class="my-0"><b>Custo da Mercadoria</b></h6> <small class="text-muted" contenteditable="true">Valor da compra</small>
+              </div> <span class="text-muted">R$ {{=proj.total_custo_envio}}0</span>
+                {{total+=proj.total_custo_envio}}
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                  {{vales=proj.total_vale_saida_funcionario+proj.total_vale_saida_vendedor+proj.vale_saida_chefe}}
+                <h6 class="my-0"><b>Vales Venda</b></h6> <small class="text-muted">Chefe,Vendedores e Funcionarios</small>
+              </div> <span class="text-muted">R$ {{=vales}}0 </span>
+            </li>  {{total+=vales}}
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">Despesas Locais<br></h6> <small class="text-muted">Gastos antes da viagem</small>
+              </div> <span class="text-muted">R$ {{proj.total_valor_depesa_local}}0</span>
+            </li> {{total+=proj.total_valor_depesa_local}}
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">Adiantamento em Dinheiro<br></h6> <small class="text-muted">Para bancar as despesas até chegar</small>
+              </div> <span class="text-muted">R$ {{=proj.adiantamento_saida_venda}}</span>
+            </li> {{total+=proj.adiantamento_saida_venda}}
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">Saldos de Chegada<br></h6> <small class="text-muted">Chefe,Vendedores e Funcionarios</small>
+              </div> <span class="text-muted">R$ </span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0"><b>Total Investimento</b></h6> <small>EXAMPLECODE</small><small>EXAMPLECODE</small>
+              </div> <span class="text-success">R$ {{=total}}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between" > <span>Total (USD)</span> <b>R$ </b> </li>
+          </ul>
+            </div>
+        <div class="col-md-3">
+            <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between" >
+              <div>
+                <h6 class="my-0"><b>Investimento&nbsp;</b></h6> <small class="text-muted" contenteditable="true">Valor da compra</small>
+              </div> <span class="text-muted">R$&nbsp;</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0"><b>Depositos</b></h6> <small class="text-muted">Chefe,Vendedores e Funcionarios</small>
+              </div> <span class="text-muted">R$ </span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">Saldo&nbsp;<br></h6> <small class="text-muted">Gastos antes da viagem</small>
+              </div> <span class="text-muted">R$ </span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">Previsão de extras</h6> <small class="text-muted">Para bancar as despesas até chegar</small>
+              </div> <span class="text-muted">R$ </span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0"><b>Previsão de Saldo</b></h6> <small>EXAMPLECODE</small><small>EXAMPLECODE</small>
+              </div> <span class="text-success">R$ </span>
+            </li>
+          </ul>
+        </div>
+      </div>      </div>      </div>

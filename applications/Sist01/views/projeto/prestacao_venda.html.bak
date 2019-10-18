@@ -1,0 +1,162 @@
+{{extend 'layout.html'}}
+<div class="section">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-md-8">
+             
+              <p>{{=proj.nome}}</p>
+            <h3>Prestação de Contas (Vendas)</h3>
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between">
+                <div>
+                  <h6 class="my-0">
+                    <b>Preço da Mercadoria</b>
+                  </h6>
+                  <small class="text-muted">Quantidade de pçs {{=proj.total_quantidade_envio}}</small>
+                </div>
+                <span class="text-muted">R$ {{=proj.total_preco_envio}}0</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <div>
+                  <h6 class="my-0">
+                    <b>Venda Prazo</b>
+                  </h6>
+                  <small class="text-muted">{{=proj.total_quantidade_fichas}} fichas</small>
+                </div>
+                <span class="text-muted">R$ {{=proj.total_venda}}0</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <div>
+                  <h6 class="my-0">
+                    <b>Retorno</b>
+                  </h6>
+                  <small class="text-muted">{{=proj.total_quantidade_retorno}} pçs</small>
+                </div>
+                <span class="text-muted">R$ {{=proj.total_preco_retorno}}0</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between bg-light">
+                <div class="text-success">
+                  <h6 class="my-0">
+                    <b>Entrada à vista</b>
+                  </h6>
+                    {{diferenca=proj.total_preco_envio-proj.total_venda-proj.total_preco_retorno}}
+                  <small>R$ {{=diferenca}}0</small>
+                </div>
+                <span class="text-success">R$ {{=diferenca/2}}0</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Adiantamento Dinheiro</span>
+                <b>R$ {{=proj.adiantamento_saida_venda}}0</b>
+				  <li class="list-group-item d-flex justify-content-between">
+                <span>Entrada das Vendas</span>
+                <b>R$ {{=proj.total_entradas_venda}}0</b>
+				<li class="list-group-item d-flex justify-content-between">
+                <b><span>Total Dinheiro da Viagem</span></b>
+                    {{din_real=(diferenca/2)+proj.adiantamento_saida_venda+proj.total_entradas_venda}}
+                <b>R$ {{=din_real}}0</b>
+            </ul><br>  <h3>Dinheiro Apresentado</h3>
+			    <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between">
+                <div>
+                  <h6 class="my-0">
+                    <b>Despesa da Venda</b>
+                  </h6>
+                  <small class="text-muted">{{=proj.total_valor_depesa_venda/proj.total_venda*100}}%</small>
+                </div>
+                <span class="text-muted">R$ {{=proj.total_valor_depesa_venda}}0</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <div>
+                  <h6 class="my-0">
+                    <b>Caderno dos Vendedores</b>
+                  </h6>
+                  <small class="text-muted">obs</small>
+                </div>
+                <span class="text-muted">R$ {{=proj.total_vale_caderno_vendedor}}0</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <div>
+                  <h6 class="my-0">
+                    <b>Caderno dos Funcionarios</b>
+                  </h6>
+                  <small class="text-muted">Vale Entregue na viagem</small>
+                </div>
+                <span class="text-muted">R$ {{=proj.total_vale_caderno_funcionario}}0</span>
+              </li>
+					<li class="list-group-item d-flex justify-content-between">
+                <div>
+                  <h6 class="my-0">
+                    <b>Devolução em Dinheiro</b>
+                  </h6>
+                  <small class="text-muted">Retorno em dinheiro</small>
+                </div>
+                <span class="text-muted">R$ {{=proj.devolucao_dinh}}0</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between bg-light">
+                <div class="text-danger">
+                  <h6 class="my-0">
+                    <b>Diferênça</b>
+                  </h6>
+                   {{caderno=proj.total_vale_caderno_funcionario+proj.total_vale_caderno_vendedor}}
+                    {{dinh=proj.devolucao_dinh+proj.total_valor_depesa_venda}}
+                  <small>Valor sempre tem que dar negativo</small>
+                </div>
+                  {{din_pres=dinh+caderno}}
+                  {{diferenca=din_real-din_pres }}
+                    <span class="text-danger">R$ {{=diferenca}}0</span>
+              </li>
+
+            </ul>
+          </div>
+            <div class="col-md-4">
+            <h2>Dados Auxiliares</h2>
+            
+            <ul class="list-group">
+              <li class="list-group-item"><a  href="{{=URL('projeto','info_venda', args=proj.id )}}">Informações da Venda</a></li>
+				
+              <li class="list-group-item"><a  href="{{=URL('produto','listar_merc_envio', args=proj.id )}}">Mercadoria Enviada</a></li>
+              <li class="list-group-item"><a  href="{{=URL('equipe','listar_vendedores_inicial', args=proj.id )}}">Equipe (Dados Iniciais)</a></li>
+				<li class="list-group-item"><a  href="{{=URL('despesa','listar_despesa_venda', args=proj.id )}}">Despesa da Venda</a></li>
+				<li class="list-group-item"><a  href="{{=URL('produto','listar_merc_retorno', args=proj.id )}}">Mercadoria Retorno</a></li>
+              <li class="list-group-item"><a  href="{{=URL('equipe','listar_funcionario', args=proj.id )}}">Funcionarios da Venda</a></li>
+              <li class="list-group-item"><a  href="{{=URL('equipe','listar_vendedores_venda', args=proj.id )}}">Equipe (chegada da Venda)</a></li>
+            </ul>
+                  <br>
+			    <blockquote>
+              <p>{{=proj.nome_chefe}}</p>
+              <footer>Saldo e Comissão</footer>
+            </blockquote>
+			  <table class="table table-bordered table-condensed table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>Deescrição</th>
+                  <th>Valor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Venda</td>
+                  <td>R$ {{=proj.total_venda}}</td>
+                </tr>
+                <tr>
+                  <td>Comissçao</td>
+                    {{com_chef=proj.comissao_chefe_venda*proj.total_venda/100}}
+                  <td>R$ {{=com_chef}}</td>
+                </tr>
+                <tr>
+                  <td>Vale</td>
+                  <td>R$ {{=proj.vale_saida_chefe}}</td>
+                </tr> <tr>
+                  <td>Diferênça</td>
+                  <td>R$ {{=diferenca}}</td>
+                </tr> <tr>
+                  <td>Saldo</td>
+                  <td>R$ {{=com_chef-proj.vale_saida_chefe-diferenca}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,61 @@
+{{extend 'layout.html'}}
+
+
+<div class="col-md-4">
+<h2>Lista de Envio</h2>
+{{=proj.nome}}
+<a class="btn btn-primary btn-block" href="{{=URL('projeto', 'prestacao_venda', args=proj.id)}}"> Voltar</a>
+<a class="btn btn-secondary btn-block"  href="{{=URL('inserir_merc_envio', args=proj.id)}}">Enviar Produto</a>
+</div>
+<div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Quant</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Total</th>
+				    <th>Custo</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+				{{ptotal=0.0}}
+				{{ctotal=0.0}}
+				{{q=0.0}}
+				{{vc=0.0}}
+				{{vr=0.0}}
+				{{for row in rows:}}
+              <tr>
+
+                <th>{{=row.quantidade}}</th>
+				<th>{{=row.descricao}}</th>
+				<th>{{=row.preco_unitario}}</th>
+				{{vr=row.quantidade*row.preco_unitario}}
+				<th>{{=vr}}</th>
+				  <th>{{=row.custo_unitario}}</th>
+				{{vc=row.quantidade*row.custo_unitario}}
+				<th>{{=vc}}</th>
+                <th><a href="{{=URL('alterar_merc_envio', args=row.id)}}">Alterar</a></th>
+				{{ptotal=ptotal+vr}}
+
+				{{ctotal=ctotal+vc}}
+				 {{q=q+row.quantidade}}
+              </tr>
+              {{pass}}
+				 <tr>
+
+                <th>{{=q}}</th>
+				<th>Total</th>
+				<th>--></th>
+				<th>{{=ptotal}}</th>
+					 <th>--></th>
+				<th>{{=ctotal}}</th>
+
+              </tr>
+            </tbody>
+          </table>
+   </div>
+<div class="col-md-4">
+<a class="btn btn-primary btn-block" href="{{=URL('subir_dados_mercadoria_envio', args=[proj.id,q,ptotal,ctotal])}}">Atualizar Envio</a>
+</div>

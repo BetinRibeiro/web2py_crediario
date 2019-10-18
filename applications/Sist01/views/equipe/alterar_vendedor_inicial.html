@@ -1,0 +1,17 @@
+{{extend 'layout.html'}}
+
+
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Alteração de Vendedor</h2>
+            <li class="list-group-item">
+              <a class="btn btn-primary btn-block" href="{{=URL('equipe','listar_vendedores_inicial', args=proj.id )}}">Voltar</a><br><br><br>
+           
+            <h3>Alterar Vendedor</h3> </li>
+          </div>
+          <div class="col-md-8">{{=form}}</div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,16 @@
+{{extend 'layout.html'}}
+
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Cadastro de Funcionario</h2>
+            <li class="list-group-item">
+              <a class="btn btn-primary btn-block" href="{{=URL('equipe','inserir_funcionario_venda', args=proj.id )}}">Voltar</a><br><br><br>
+           
+            <h3>Inserir Funcionario</h3> </li>
+          </div>
+          <div class="col-md-8">{{=form}}</div>
+        </div>
+      </div>
+    </div>
