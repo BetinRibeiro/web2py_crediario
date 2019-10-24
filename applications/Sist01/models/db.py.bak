@@ -161,10 +161,10 @@ db.define_table('projeto',
 				Field('nome_chefe', 'string', writable=True),
 				Field('primeira_cidade', 'string', writable=True),
                 
-				Field('vale_saida_chefe', 'double', default=0, writable=True, readable=True),
-				Field('adiantamento_saida_venda', 'double', default=0, writable=True, readable=True),
-				Field('devolucao_dinh', 'double', default=0, writable=True, readable=True),
-				Field('comissao_chefe_venda', 'double', default=0, writable=True, readable=True),
+				Field('vale_saida_chefe', 'double', default=1, writable=True, readable=True),
+				Field('adiantamento_saida_venda', 'double', default=1, writable=True, readable=True),
+				Field('devolucao_dinh', 'double', default=1, writable=True, readable=True),
+				Field('comissao_chefe_venda', 'double', default=1, writable=True, readable=True),
                 
 				Field('data_saida_venda', 'date', writable=True, readable=True),
 				Field('data_cobranca', 'date', writable=True, readable=True),
@@ -175,39 +175,39 @@ db.define_table('projeto',
 				Field('total_valor_depesa_cobranca', 'double', default=1, writable=False, readable=False, notnull=True),
 
 				#Informações dos depositos
-				Field('total_valor_deposito', 'double', default=0, writable=False, readable=False, notnull=True),
+				Field('total_valor_deposito', 'double', default=1, writable=False, readable=False, notnull=True),
 
 				#informações Mercadoria Envio
-				Field('total_quantidade_envio', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_preco_envio', 'double',default=0, writable=False, readable=False, notnull=True),
-				Field('total_custo_envio', 'double', default=0.0, writable=False, readable=False, notnull=True),
+				Field('total_quantidade_envio', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_preco_envio', 'double',default=1, writable=False, readable=False, notnull=True),
+				Field('total_custo_envio', 'double', default=1.0, writable=False, readable=False, notnull=True),
 
 				#informações Mercadoria Retorno
-				Field('total_quantidade_retorno', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_preco_retorno', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_custo_retorno', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_custo_aproveitamento', 'double', default=0, writable=False, readable=False, notnull=True),
+				Field('total_quantidade_retorno', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_preco_retorno', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_custo_retorno', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_custo_aproveitamento', 'double', default=1, writable=False, readable=False, notnull=True),
 
 				#informações Mercadoria
-				Field('total_quantidade_devolucao', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_preco_devolucao', 'double',default=0,writable=False, readable=False, notnull=True),
-				Field('total_custo_devolucao', 'double',default=0,  writable=False, readable=False, notnull=True),
-				Field('total_custo_aproveitamento_devolucao', 'double',default=0, writable=False, readable=False, notnull=True),
+				Field('total_quantidade_devolucao', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_preco_devolucao', 'double',default=1,writable=False, readable=False, notnull=True),
+				Field('total_custo_devolucao', 'double',default=1,  writable=False, readable=False, notnull=True),
+				Field('total_custo_aproveitamento_devolucao', 'double',default=1, writable=False, readable=False, notnull=True),
 
-				Field('total_salario', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_vale_saida_funcionario', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_vale_caderno_funcionario', 'double', default=0, writable=False, readable=False, notnull=True),
+				Field('total_salario', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_vale_saida_funcionario', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_vale_caderno_funcionario', 'double', default=1, writable=False, readable=False, notnull=True),
 
-				Field('total_vale_saida_vendedor', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_vale_caderno_vendedor', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_venda', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_entradas_venda', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_quantidade_fichas', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_comissao_vendedor', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_recebido_cobranca', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_devolvido_cobranca', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_prego_cobranca', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('total_saldo', 'double', default=0, writable=False, readable=False, notnull=True),
+				Field('total_vale_saida_vendedor', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_vale_caderno_vendedor', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_venda', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_entradas_venda', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_quantidade_fichas', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_comissao_vendedor', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_recebido_cobranca', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_devolvido_cobranca', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_prego_cobranca', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('total_saldo', 'double', default=1, writable=False, readable=False, notnull=True),
 
 
 
@@ -215,15 +215,15 @@ db.define_table('projeto',
                 
 				Field('ultima_cidade', 'string', writable=False, readable=False, notnull=True),
                 
-				Field('comissao_chefe', 'double', default=0, writable=False, readable=False, notnull=True),
+				Field('comissao_chefe', 'double', default=1, writable=False, readable=False, notnull=True),
 
 				Field('nome_cobrador', 'string', writable=False, readable=False, notnull=True),
-				Field('comissao_cobrador', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('vale_cobrador', 'double', default=0, writable=False, readable=False, notnull=True),
-				Field('adiantamento_saida_cobranca', 'double', default=0, writable=False, readable=False, notnull=True),
+				Field('comissao_cobrador', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('vale_cobrador', 'double', default=1, writable=False, readable=False, notnull=True),
+				Field('adiantamento_saida_cobranca', 'double', default=1, writable=False, readable=False, notnull=True),
                 
 				Field('data_chegada_cobranca', 'date', writable=False, readable=False),
-				Field('retorno_dinheiro', 'double', default=0, writable=False, readable=False, notnull=True),
+				Field('retorno_dinheiro', 'double', default=1, writable=False, readable=False, notnull=True),
 				auth.signature)
 
 

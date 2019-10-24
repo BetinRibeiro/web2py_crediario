@@ -1,0 +1,66 @@
+{{extend 'layout.html'}}
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','acesso_geral_projeto', args=row.id)}}">Acesso Geral</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Prestação Venda</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Investimento</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Prestação Cobrança</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Relatorio Lucros</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<h3>Lista Mercadoria de retorno</h3>
+
+ <table class="table">
+            <thead>
+              <tr>
+                <th>Quant</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Total</th>
+				 <th>Q. Apro</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+				{{ptotal=0.0}}
+				{{ctotal=0.0}}
+				{{q=0.0}}
+				{{vc=0.0}}
+				{{vr=0.0}}
+				{{for row in rows:}}
+              <tr>
+
+                <th>{{=row.quant_pcs_retorno}}</th>
+				<th>{{=row.descricao}}</th>
+				<th>{{=row.preco_unitario}}</th>
+                    {{vr=row.quant_pcs_retorno*row.preco_unitario}}
+				<th>{{=vr}}</th>
+				<th>{{=row.quant_pcs_aprov_retorno}}</th>
+                
+				{{vc=row.quant_pcs_aprov_retorno*row.custo_unitario}}
+				<th>{{=vc}}</th>
+                <th><a href="{{=URL('alterar_merc_retorno', args=row.id)}}">Alterar</a></th>
+				{{ptotal=ptotal+vr}}
+
+				{{ctotal=ctotal+vc}}
+				 {{q=q+row.quant_pcs_retorno}}
+              </tr>
+              {{pass}}
+				 <tr>
+
+                <th>{{=q}}</th>
+				<th>Total</th>
+				<th>--></th>
+				<th>{{=ptotal}}</th>
+					 <th>--></th>
+				<th>{{=ctotal}}</th>
+
+              </tr>
+            </tbody>
+          </table>

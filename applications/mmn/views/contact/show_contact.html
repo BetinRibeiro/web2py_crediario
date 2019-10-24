@@ -1,0 +1,24 @@
+{{extend 'layout.html'}}
+
+                <h2>Show Contact</h2>
+			<a class="btn btn-secondary btn-block" href="{{=URL('create_contact')}}">Create Contact</a><br>
+        
+			<div class="table-responsive">
+				  <table class="table table-striped table-borderless">
+					<thead>
+					  <tr>
+						<th>Name</th>
+						<th>Phone</th>
+					  </tr>
+					</thead>
+					<tbody>
+						{{for row in rows:}}
+					  <tr>
+
+						<td><a href="{{=URL('change_contact', args=row.id)}}">{{=row.name}}</a><br>{{=row.note}}</td>
+						  
+						<td>{{=row.phone}}</td>
+					  </tr>
+					  {{pass}}
+					</tbody>
+				  </table>

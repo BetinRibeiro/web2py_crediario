@@ -1,0 +1,51 @@
+{{extend 'layout.html'}}
+<h1>Este é o template mercadoria/listar_merc_envio.html</h1>
+
+
+ <table class="table">
+            <thead>
+              <tr>
+                <th>Quant</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Total</th>
+				    <th>Custo</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+				{{ptotal=0.0}}
+				{{ctotal=0.0}}
+				{{q=0.0}}
+				{{vc=0.0}}
+				{{vr=0.0}}
+				{{for row in rows:}}
+              <tr>
+
+                <th>{{=row.quant_pcs_enviada}}</th>
+				<th>{{=row.descricao}}</th>
+				<th>{{=row.preco_unitario}}</th>
+				{{vr=row.quant_pcs_enviada*row.preco_unitario}}
+				<th>{{=vr}}</th>
+				  <th>{{=row.custo_unitario}}</th>
+				{{vc=row.quant_pcs_enviada*row.custo_unitario}}
+				<th>{{=vc}}</th>
+                <th><a href="{{=URL('alterar_merc_enviada', args=row.id)}}">Alterar</a></th>
+				{{ptotal=ptotal+vr}}
+
+				{{ctotal=ctotal+vc}}
+				 {{q=q+row.quant_pcs_enviada}}
+              </tr>
+              {{pass}}
+				 <tr>
+
+                <th>{{=q}}</th>
+				<th>Total</th>
+				<th>--></th>
+				<th>{{=ptotal}}</th>
+					 <th>--></th>
+				<th>{{=ctotal}}</th>
+
+              </tr>
+            </tbody>
+          </table>

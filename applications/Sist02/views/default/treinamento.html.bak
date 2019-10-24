@@ -1,0 +1,169 @@
+{{extend 'layout.html'}}
+<body>
+ 
+  <div class="text-center py-5">
+    <div class="container">
+      <div class="row my-5 justify-content-center">
+        <div class="col-md-9">
+          <h1>Industria de milionarios</h1>
+          <p class="lead text-muted">Desenvolvimento pessoal para a vida de sucesso. Saiba todos os segredos para tornar a vida dos sonhos em realidade.Somente 2% daa população muldial se interessa em se desenvolver e sabe o valor do conhecimento, abaixo temos um curso completo sobre o mercado que mais formou miionarios no mundo.</p>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-4 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 p-3">
+          <div class="card box-shadow">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube.com/embed/eGEkQkC4xxs" allowfullscreen="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="361" width="481"></iframe>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Veja este vídeo com uma palestra muito bem elaborada, onde é mostrado o modelo de negócio do Marketing Multinível. com certeza é um dos videos mais completos sobre esse assunto e tratado de maneiro idônea, sem direcionar para essa ou aquela empresa.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-3">
+          <div class="card box-shadow">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube.com/embed/yCZGfeToTeA" allowfullscreen="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="361" width="453"></iframe>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Através de pesquisas no setor, não existe nenhum outro negócio em que se investindo tão pouco é capaz de se obter um crescimento tão acelerado, com uma progressão geométrica dos rendimentos, e principalmente que vai depender totalmente de seu próprio esforço e comprometimento para ter sucesso.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-3">
+          <div class="card box-shadow">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube.com/embed/ajGlYSe3BhE" allowfullscreen="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="361" width="453"></iframe>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Retenção é a permanência de pessoas no negócio. Como tudo na vida, no MMN as pessoas eventualmente desistem, por qualquer motivo que seja, ter uma retenção alta significa que poucas pessoas saem da sua equipe, que a maioria está persistindo.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-3">
+          <div class="card box-shadow">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube.com/embed/kSAtsSUWDgY" allowfullscreen="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="361" width="453"></iframe>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Antes de falarmos sobre como recrutar pessoas para marketing multinivel, precisamos entender porque isso é tão importante. O fato é que não existe marketing multinivel se não houver recrutamento. </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-3">
+          <div class="card box-shadow">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube.com/embed/eqExJfWbc4E" allowfullscreen="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="361" width="455"></iframe>
+            </div>
+            <div class="card-body">
+              <p class="card-text">A EDIFICAÇÃO mantém a equipe unida e cada vez que edificamos nosso Patrocinador e toda Linha Ascendente ou Up-line aos nossos convidados ou amigos, ou seja, destacamos os pontos positivos (não fazendo bajulação), </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-3">
+          <div class="card box-shadow">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube.com/embed/rDcMCein3yA" allowfullscreen="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="361" width="453"></iframe>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Está é a forma certa ao interagir com seus prospects e com a sua equipe. Você sempre precisa transmitir credibilidade e confiança. Sempre que você entrar na atividade comercial.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-3">
+          <div class="card box-shadow">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube.com/embed/pW0pXmBn95o" allowfullscreen="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="361" width="481"></iframe>
+            </div>
+            <div class="card-body">
+              <p class="card-text">O caminho a percorrer será sempre o mesmo. Este caminho foi criado pelos fundadores da sua empresa que desejavam oferecer uma oportunidade única a seus empreendedores para mudarem de vida. O começo todos sabem onde fica, é na sua Decisão ao aderir ao contrato de adesão.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-3">
+          <div class="card box-shadow">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube.com/embed/xtTGlP6oPMo" allowfullscreen="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="361" width="453"></iframe>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Estado, condição, caráter do que ou de quem goza de autonomia, de liberdade com relação a alguém ou algo.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-3">
+          <div class="card box-shadow">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube.com/embed/R5DJaPWYxWQ" allowfullscreen="" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="361" width="481"></iframe>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Auxílio ou orientação que um profissional (pedagogo, psicólogo etc.) presta ao paciente nas decisões que este deve tomar com relação à escolha de profissão, cursos etc., ou quanto à solução de pequenos desajustamentos de conduta.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+
+</body>

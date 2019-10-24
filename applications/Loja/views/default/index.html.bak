@@ -1,0 +1,50 @@
+{{extend 'layout.html'}}
+<center style="background-color: #333; color:white; padding:30px">
+    <h1>Plano de emagrecimento</h1>
+</center>
+    
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <blockquote>
+              <p>Lorem ipsum dolor sit amet</p>
+              <footer>Someone famous</footer>
+            </blockquote>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              
+        <a href="{{=URL('default','index')}}"><img src="{{=URL('static','images/1.jpg')}}"  height="200" width="350" class="img-responsive"></a>
+              <div class="caption">
+                <h3>Pó Nutricional</h3>
+                <p>Com o pó nutricional você se alimenta de forma leve e com todos os nutrientes que seu corpo precisa, sem se sentir pesado após as refeições. Composto por Whey Protein, que apresenta ação comprovada no emagrecimento, por auxiliar no bom funcionamento do metabolismo e por aumentar a saciedade. Contém zero açúcar, zero glúten e é composto por 12 minerais e 11 vitaminas, nutrientes que regulam as funções vitais do organismo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+        <a href="{{=URL('default','index')}}"><img src="{{=URL('static','images/3.jpg')}}" height="200" width="350" class="img-responsive"></a>
+              
+              <div class="caption">
+                <h3>Chá </h3>
+                <p>Conta com ingredientes como o matchá, o chá verde, o gengibre, o café verde e o guaraná. A fórmula completa auxilia na redução de peso, uma vez que a mistura é um excelente termogênico. O produto pode ser consumido ao longo do dia com o objetivo de aumentar a qualidade e disposição para as atividades diárias. A mistura pode ser feita com uma colher de chá do produto em 250ml de água quente ou fria. Este produto é contraindicado para hipertensos e deve-se evitar o consumo durante a noite.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+                
+        <a href="{{=URL('default','index')}}"><img src="{{=URL('static','images/2.jpg')}}"  height="200" width="350" class="img-responsive"></a>
+              <div class="caption">
+                <h3>Suplemento</h3>
+                <p>Suplemento redutor de medidas, rico em Fibras como Psyllium, Quitosana, Vitamina C, Picolinato de Cromo e Biotina. Esses ingredientes aceleram a obtenção de medidas saudáveis, através da redução na absorção de gorduras pelo organismo e sua eliminação de maneira rápida e eficaz.
+Ingredientes: Psyllium (Plantago ovatae), Quitosana em pó, Vitamina C (ácido ascórbico), cromo (picolinato de cromo), Gelatina, corante inorgânico vermelho l4 e FDAC azul l, dióxido de titânio e umectante água potável filtrada.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

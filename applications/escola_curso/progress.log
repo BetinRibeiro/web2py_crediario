@@ -1,0 +1,9 @@
+[2019-10-19 01:53:23] START
+[2019-10-19 01:54:05] EDIT escola_curso/models/db.py: -14
+[2019-10-19 01:54:37] EDIT escola_curso/models/menu.py: 18
+[2019-10-19 01:54:56] CREATE tables.py: 0
+[2019-10-19 01:55:08] CREATE validators.py: 0
+[2019-10-19 01:55:31] EDIT escola_curso/models/tables.py: 18
+[2019-10-19 01:55:49] EDIT escola_curso/models/validators.py: 7
+[2019-10-19 01:56:23] EDIT escola_curso/controllers/default.py: 109
+[2019-10-19 01:56:57] CREATE plugin_ckeditor.py: 0

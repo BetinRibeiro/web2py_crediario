@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# tente algo como
+# tente algo comohttps://rogoberto.pythonanywhere.com/Sist01/projeto/listar_projetos
 @cache.action(time_expire=300, cache_model=cache.ram, quick='P')
 @auth.requires_login()
 def listar_projetos():
@@ -39,7 +39,14 @@ def acesso_geral():
 	proj = db.projeto(request.args(0, cast=int))
 	return locals()
 
-@cache.action(time_expire=30, cache_model=cache.ram, quick='P')
+def info_antes_venda():
+    proj = db.projeto(request.args(0, cast=int))
+    rowsvendedor = db(db.vendedor.projeto == request.args(0, cast=int)).select()
+    rowsfuncionario = db(db.funcionario_venda.projeto == request.args(0, cast=int)).select()
+    rowsmercadoria = db(db.mercadoria_enviada.projeto == request.args(0, cast=int)).select()
+    return locals()
+
+@cache.action(time_expire=300, cache_model=cache.ram, quick='P')
 def prestacao_venda():
 	proj = db.projeto(request.args(0, cast=int))
         return response.render('projeto/prestacao_venda.html', locals())

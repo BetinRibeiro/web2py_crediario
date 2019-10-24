@@ -163,8 +163,8 @@ def subir_dados_mercadoria_retorno():
 	db.projeto.adiantamento_saida_venda.readable = False
 	db.projeto.adiantamento_saida_venda.writable = False
 	
-	db.projeto.primeira_data_cobranca.readable = False
-	db.projeto.primeira_data_cobranca.writable = False
+	db.projeto.data_cobranca.readable = False
+	db.projeto.data_cobranca.writable = False
 	
 	db.projeto.primeira_cidade.readable = False
 	db.projeto.primeira_cidade.writable = False

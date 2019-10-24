@@ -265,7 +265,7 @@ db.define_table('entrada_dinheiro_venda',
 				Field('data_ent_venda', 'date', writable=True),
 				auth.signature)
 
-db.define_table('saida_dinheiro_venda',
+Saida = db.define_table('saida_dinheiro_venda',
 				Field('projeto','reference projeto', label='Equipe', writable=True),
 				Field('descricao', 'string', label='Descrição', default='Tipo de Despesa', writable=True, readable=True),
 				Field('valor', 'double', default=0, writable=True),

@@ -1,0 +1,50 @@
+{{extend 'layout.html'}}
+<h3>Lista Mercadoria de retorno</h3>
+
+ <table class="table">
+            <thead>
+              <tr>
+                <th>Quant</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Total</th>
+				 <th>Q. Apro</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+				{{ptotal=0.0}}
+				{{ctotal=0.0}}
+				{{q=0.0}}
+				{{vc=0.0}}
+				{{vr=0.0}}
+				{{for row in rows:}}
+              <tr>
+
+                <th>{{=row.quant_pcs_retorno}}</th>
+				<th>{{=row.descricao}}</th>
+				<th>{{=row.preco_unitario}}</th>
+				
+				<th>{{=vr}}</th>
+				<th>{{=row.quant_pcs_aprov_retorno}}</th>
+				
+				<th>{{=vc}}</th>
+                <th><a href="{{=URL('alterar_merc_enviada', args=row.id)}}">Alterar</a></th>
+				{{ptotal=ptotal+vr}}
+
+				{{ctotal=ctotal+vc}}
+				 {{q=q+row.quant_pcs_retorno}}
+              </tr>
+              {{pass}}
+				 <tr>
+
+                <th>{{=q}}</th>
+				<th>Total</th>
+				<th>--></th>
+				<th>{{=ptotal}}</th>
+					 <th>--></th>
+				<th>{{=ctotal}}</th>
+
+              </tr>
+            </tbody>
+          </table>

@@ -1,0 +1,7 @@
+# -*- coding: utf-8 -*-
+# tente algo como
+
+def listar_merc_envio():
+    proj = db.projeto(request.args(0, cast=int))
+    rows = db(db.mercadoria_enviada.projeto == request.args(0, cast=int)).select()
+    return locals()

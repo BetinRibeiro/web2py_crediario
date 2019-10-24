@@ -1,0 +1,119 @@
+{{extend 'layout.html'}}
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="#">Prestação Venda</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Investimento</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Prestação Cobrança</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Relatorio Lucros</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 order-md-2">
+          <h4 class="d-flex justify-content-between mb-3"> <span class="text-muted">Prestação de Contas (Cobrança)</span> </h4>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0"><b>Total Venda</b></h6> <small class="text-muted"># Peças</small>
+              </div> <span class="text-muted">R$ #</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0"><b>Total Devolução</b></h6> <small class="text-muted"># Peças</small>
+              </div> <span class="text-muted">R$ #</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0"><b>Total Prego</b></h6> <small class="text-muted"># Fichas</small>
+              </div> <span class="text-muted">R$ #</span>
+            </li><br>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0"><b>Total Recebdio</b></h6> <small># Diferênça&nbsp;</small>
+              </div> <span class="text-success">R$ #</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">Adiantamento</h6> <small class="text-muted">Dinheiro Emprestado para Venda</small>
+              </div> <span class="text-muted">R$ #</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between"> <span>Total do Dinheiro da Viagem</span> <b contenteditable="true">R$ #</b> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 order-md-2">
+          <h4 class="d-flex justify-content-between mb-3"> <span class="text-muted">Valor Apresentado</span> </h4>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0 text-info"><b>Total Despesa</b></h6> <small class="text-info"># %</small>
+              </div> <span class="text-info">R$ #</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">Depositos</h6> <small class="text-muted"># Peças</small>
+              </div> <span class="text-muted">R$ #</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">Dinheiro Devolvido</h6> <small class="text-muted"># Peças</small>
+              </div> <span class="text-muted">R$ #</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0"><b class="text-danger">Diferênça da Prestação</b></h6> <small class="text-danger"># Diferênça&nbsp;</small>
+              </div> <span class="text-danger">R$ #</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 order-md-2">
+          <h4 class="d-flex justify-content-between mb-3"> <span class="text-muted">Saldo Cobrador</span> </h4>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">Total da Cobrança</h6> <small class="text-muted">#&nbsp;</small>
+              </div> <span class="text-muted">R$ #</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">Comissão<br></h6> <small class="text-muted">#&nbsp;</small>
+              </div> <span class="text-muted">R$ #</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">Vale</h6> <small class="text-muted">#&nbsp;</small>
+              </div> <span class="text-muted">R$ #</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0"><b class="text-danger">Diferênça da Prestação</b></h6> <small class="text-danger"># Diferênça&nbsp;</small>
+              </div> <span class="text-danger">R$ #</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">Saldo do Cobrador</h6> <small class="text-muted">#&nbsp;</small>
+              </div> <span class="text-muted">R$ #</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

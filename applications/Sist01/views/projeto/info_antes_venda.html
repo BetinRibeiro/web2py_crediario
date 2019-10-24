@@ -1,0 +1,128 @@
+{{extend 'layout.html'}}  
+<div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <hr>
+            <div class="page-header">
+              <h3>Lista Vendedor&nbsp; vales</h3>
+            </div>
+            <table class="table table-bordered table-condensed table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Vale</th>
+                </tr>
+              </thead>
+              <tbody>
+				{{a=0.0}}
+				{{for row in rowsvendedor:}}
+              <tr>
+                <th>{{=row.nome_vendedor}}</th>
+				<th>{{=row.vale_saida}}</th>
+				  {{a=a+row.vale_saida}}
+              </tr>
+              {{pass}}
+				 <tr>
+                <th>Total</th>
+				<th>{{=a}}</th>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <hr>
+            <div class="page-header">
+              <h3>Lista Funcionarios &nbsp; vales</h3>
+            </div>
+            <table class="table table-bordered table-condensed table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Função</th>
+                  <th>Vale</th>
+                </tr>
+              </thead>
+              
+              <tbody>
+				{{a=0.0}}
+				{{for row in rowsfuncionario:}}
+              <tr>
+                <th>{{=row.nome}}</th>
+				<th>{{=row.funcao}}</th>
+				<th>{{=row.vale_saida}}</th>
+				  {{a=a+row.vale_saida}}
+              </tr>
+              {{pass}}
+				 <tr>
+                <th>Total</th>
+                       <th></th>
+				<th>{{=a}}</th>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <hr>
+            <div class="page-header">
+              <h3>Lista Mercadoria Enviada Para Venda</h3>
+            </div>
+            <table class="table table-bordered table-condensed table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>Quant</th>
+                  <th>Descrição</th>
+                  <th>Preço und</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+				{{ptotal=0.0}}
+				{{ctotal=0.0}}
+				{{q=0.0}}
+				{{vc=0.0}}
+				{{vr=0.0}}
+				{{for row in rowsmercadoria:}}
+              <tr>
+
+                <th>{{=row.quantidade}}</th>
+				<th>{{=row.descricao}}</th>
+				<th>{{=row.preco_unitario}}</th>
+				{{vr=row.quantidade*row.preco_unitario}}
+				<th>{{=vr}}</th>
+				 
+				{{ptotal=ptotal+vr}}
+
+				{{ctotal=ctotal+vc}}
+				 {{q=q+row.quantidade}}
+              </tr>
+              {{pass}}
+				 <tr>
+
+                <th>{{=q}}</th>
+				<th>Total</th>
+				<th>--></th>
+				<th>{{=ptotal}}</th>
+
+              </tr>
+            </tbody>
+            </table>
+          </div>
+          <div class="col-md-4">
+            <h3 contenteditable="true">Formulario Informações Iniciais</h3>
+               <ul class="list-group">
+              <li class="list-group-item">Adiantamento {{=proj.adiantamento_saida_venda}}</li>
+              <li class="list-group-item">Vale do chefe {{=proj.vale_saida_chefe}}</li>
+              <li class="list-group-item">Data Cobrança {{=proj.data_cobranca}}</li>
+              <li class="list-group-item">Primeira Cidade {{=proj.primeira_cidade}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>

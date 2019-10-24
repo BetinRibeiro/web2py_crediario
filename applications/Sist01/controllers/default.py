@@ -7,6 +7,9 @@
 # ---- example index page ----
 def index():
     return locals()
+def ass():
+    db(Saida.id > 0).update(valor=9.0)
+    return locals()
 
 # ---- API (example) -----
 @auth.requires_login()

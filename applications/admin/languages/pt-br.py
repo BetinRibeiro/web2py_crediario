@@ -230,6 +230,7 @@
 'Error snapshot': 'Momento do Erro',
 'Error ticket': 'Tiquete de Erro',
 'Errors': 'Erros',
+'Errors in form, please check it out.': 'Errors in form, please check it out.',
 'Exception %(extype)s: %(exvalue)s': 'Exception %(extype)s: %(exvalue)s',
 'Exception %s': 'Exception %s',
 'Exception instance attributes': 'Atributos de instância da Exception',
