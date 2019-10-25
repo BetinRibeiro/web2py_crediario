@@ -1,0 +1,79 @@
+{{extend 'layout.html'}}
+
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','acesso_geral_projeto', args=proj.id)}}">Acesso Geral</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Prestação Venda</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Investimento</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Prestação Cobrança</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Relatorio Lucros</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<h2>Lista de Envio</h2>
+		{{=proj.nome}}
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>fichas</th>
+                  <th>entrada</th>
+                  <th>venda</th>
+                <th>comissao</th> 
+                  <th>vale</th>
+                <th>caderno</th> 
+                  <th>saldo</th>
+                <th>recebido</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                {{totalfichas=0.0}}
+                {{totalentrada=0.0}}
+                {{totalvenda=0.0}}
+                {{totalcomissao=0.0}}
+                {{totalcaderno=0.0}}
+                {{totalrecebido=0.0}}
+                {{totalvale=0.0}}
+
+				{{for row in rows:}}
+              <tr> 
+                  <th><a href="{{=URL('alterar_vendedor_venda', args=row.id)}}">{{=row.nome_vendedor}}</a></th>
+                <th>{{=row.quant_fichas}}</th>
+                  <th>{{=row.entradas_venda}}</th>
+                  <th>{{=row.venda}}</th>
+                  {{comiss=row.venda*row.comissao_venda/100}}
+                <th>{{=comiss}}</th> 
+                  <th>{{=row.vale_saida}}</th>
+                <th>{{=row.vale_caderno}}</th> 
+                  <th>{{=comiss-(row.vale_saida)-(row.vale_caderno)}}</th>
+
+                  {{totalfichas=totalfichas+row.quant_fichas}}
+                   {{totalentrada=totalentrada+row.entradas_venda}}
+                {{totalvenda=totalvenda+row.venda}}
+                  {{totalcomissao=totalcomissao+comiss}}
+                  {{totalvale=totalvale+row.vale_saida}}
+                {{totalcaderno=totalcaderno+row.vale_caderno}}
+              </tr>
+              {{pass}}
+				 <tr>
+                 <th>Total</th>
+                 <th>{{=totalfichas}}</th>
+                 <th>{{=totalentrada}}</th>
+                 <th>{{=totalvenda}}</th>
+                 <th>{{=totalcomissao}}</th>
+                 <th>{{=totalvale}}</th>
+                 <th>{{=totalcaderno}}</th>
+                 <th>--></th>
+                 <th>{{=totalrecebido}}</th>
+                     
+              </tr>
+            </tbody>
+          </table>

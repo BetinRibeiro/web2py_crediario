@@ -1,0 +1,58 @@
+{{extend 'layout.html'}}
+
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','acesso_geral_projeto', args=proj.id)}}">Acesso Geral</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Prestação Venda</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Investimento</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Prestação Cobrança</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Relatorio Lucros</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<table class="table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Venda</th>
+                  <th>Recebido</th>
+                  <th>Devolvido</th>
+                <th>Prego</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                {{totalvenda=0.0}}
+                {{totalrecebido=0.0}}
+                {{totaldevolvido=0.0}}
+                {{totalprego=0.0}}
+
+				{{for row in rows:}}
+              <tr>
+                  <th><a href="{{=URL('alterar_vendedor_cobranca', args=row.id)}}">{{=row.nome_vendedor}}</a></th>
+                <th>{{=row.venda}}</th>
+                  <th>{{=row.recebido_cobranca}}</th>
+                  <th>{{=row.devolvido_cobranca}}</th>
+                <th>{{=row.prego_cobranca}}</th>
+
+                  {{totalvenda+=row.venda}}
+                  {{totalrecebido+=row.recebido_cobranca}}
+                  {{totaldevolvido+=row.devolvido_cobranca}}
+                  {{totalprego+=row.prego_cobranca}}
+              </tr>
+              {{pass}}
+				 <tr>
+                 <th>Total</th>
+                 <th>{{=totalvenda}}</th>
+                 <th>{{=totalrecebido}}</th>
+                 <th>{{=totaldevolvido}}</th>
+                 <th>{{=totalprego}}</th>
+
+              </tr>
+            </tbody>
+          </table>

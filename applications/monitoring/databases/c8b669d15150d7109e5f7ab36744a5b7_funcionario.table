@@ -111,11 +111,11 @@ sg6
 S'vale_saida_funcionario'
 p36
 sg8
-I00
+I01
 sg9
 I512
 sg10
-S'DOUBLE'
+S'DOUBLE NOT NULL'
 p37
 sg12
 I00
@@ -156,11 +156,11 @@ sg6
 S'valor_recebido_chegada'
 p47
 sg8
-I00
+I01
 sg9
 I512
 sg10
-S'DOUBLE'
+S'DOUBLE NOT NULL'
 p48
 sg12
 I00
@@ -178,11 +178,11 @@ sg6
 S'salario_funcionario'
 p52
 sg8
-I00
+I01
 sg9
 I512
 sg10
-S'DOUBLE'
+S'DOUBLE NOT NULL'
 p53
 sg12
 I00
@@ -267,11 +267,11 @@ sg6
 S'vale_caderno_funcionario'
 p73
 sg8
-I00
+I01
 sg9
 I512
 sg10
-S'DOUBLE'
+S'DOUBLE NOT NULL'
 p74
 sg12
 I00

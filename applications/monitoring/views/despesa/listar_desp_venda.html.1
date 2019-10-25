@@ -1,0 +1,43 @@
+{{extend 'layout.html'}}
+
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','acesso_geral_projeto', args=proj.id)}}">Acesso Geral</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Prestação Venda</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Investimento</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Prestação Cobrança</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Relatorio Lucros</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<h2>Despesas Venda</h2>
+<a class="btn btn-secondary btn-block" href="{{=URL('despesa','inserir_desp_local', args=proj.id)}}">Inserir Despesas</a>
+		{{=proj.nome}}
+<table class="table">
+            <thead>
+              <tr>
+                <th>Descrição</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+				{{a=0.0}}
+				{{for row in rows:}}
+              <tr>
+                <th><a href="{{=URL('alterar_desp_local', args=row.id)}}">{{=row.descricao}}</a></th>
+				<th>{{=row.valor}}</th>
+				  {{a=a+row.valor}}
+              </tr>
+              {{pass}}
+				 <tr>
+                <th>Total</th>
+				<th>{{=a}}</th>
+              </tr>
+            </tbody>
+          </table>

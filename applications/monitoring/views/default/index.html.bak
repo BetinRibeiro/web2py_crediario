@@ -18,18 +18,18 @@
                 <li>relatorio_investimento</li>
                 <li>relatorio_demonstrativo</li>
                 <br>
-                <li>criar_projeto</li>
-                <li>alterar_projeto</li>
-                <li>listar_projeto</li>
+                <li><strike>criar_projeto</strike></li>
+                <li><strike>alterar_projeto</strike></li>
+                <li><strike>listar_projeto</strike></li>
                 <li>deletar_projeto</li>
                 <br>
-                <li>listar_mercadoria_envio</li>
-                <li>listar_mercadoria_retorno</li>
-                <li>listar_mercadoria_devolucao</li>
-                <li>inserir_mercadoria</li>
-                <li>alterar_mercadoria_envio</li>
-                <li>altear_mercadoria_retorno</li>
-                <li>alterar_mercadoria_devolucao</li>
+                <li><strike>listar_mercadoria_envio</li>
+                <li><strike>listar_mercadoria_retorno</strike></li>
+                <li><strike>listar_mercadoria_devolucao</strike></li>
+                <li><strike>inserir_mercadoria</strike></li>
+                <li><strike>alterar_mercadoria_envio</strike></li>
+                <li><strike>altear_mercadoria_retorno</strike></li>
+                <li><strike>alterar_mercadoria_devolucao</strike></li>
                 <br>
                 <li>listar_deposito</li>
                 <li>inserir_deposito</li>
@@ -45,21 +45,37 @@
                 <li>altearar_despesa_venda</li>
                 <li>altearar_despesa_cobranca</li>
                 <br>
-                <li>listar_vendedor_vale</li>
-                <li>listar_vendedor_venda</li>
-                <li>listar_vendedor_cobranca</li>
-                <li>listar_vendedor_saldo</li>
-                <li>inserir_vendedor</li>
-                <li>alterar_vendedor_vales</li>
-                <li>alterar_vendedor_venda</li>
-                <li>alterar_vendedor_cobranca</li>
+                <li><strike>listar_vendedor_vale</strike></li>
+                <li><strike>listar_vendedor_venda</strike></li>
+                <li><strike>listar_vendedor_cobranca</strike></li>
+                <li><strike>listar_vendedor_saldo</strike></li>
+                <li><strike>inserir_vendedor</strike></li>
+                <li><strike>alterar_vendedor_vales</strike></li>
+                <li><strike>alterar_vendedor_venda</strike></li>
+                <li><strike>alterar_vendedor_cobranca</strike></li></strike>
               </ul>
             </div>
-            
+
             <div class="col-md-6">
-                <ul>
                     <li><a href="{{=URL('projeto', 'listar_projetos')}}">Listar Equipes</a></li>
-                </ul>
+                </ul><hr>
+            <p>De acordo com Randy Gage, um dos papas do Multinível nos Estados Unidos, uma típica rede de Marketing Multinível tem a seguinte estrutura: </p>
+<ul>
+<li> 50% de clientes de varejo</li>
+<li>  30% de distribuidores consumidores</li>
+<li>  15% de líderes de final de semana e</li>
+<li>  5% de top líderes. </li>
+</ul><hr>
+<p>Isso mostra para a gente que existe uma boa dose de estratégia por trás da construção de uma rede e que esses percentuais fazem muito sentido. </p>
+<p>Se você os analisar, verá que espelham a estrutura de qualquer negócio tradicional onde há uma grande base de consumidores e uma quantidade menor de pessoas que participam do processo de vendas, seja em um grau maior ou menor. </p>
+<p>Por exemplo… o corpo diretivo de uma empresa não sai na rua para vender, mas ele é responsável pela estratégia comercial que possibilita que as vendas aconteçam. </p>
+<p>Os vendedores, que são em maior número que os diretores, não criam as estratégias mas vão para a rua fazer as vendas. </p>
+<p>Se a distribuição desses percentuais fosse diferente, provavelmente o negócio não funcionaria. </p>
+<p>Perceba também que todos os tipos de participantes são importantes, mas quem gera a renda residual de longo prazo são os clientes de varejo. </p>
+            <img src="https://www.pngfind.com/pngs/m/373-3730398_imagens-de-predios-em-png-png-download-predios.png"
+            class="img-responsive">
+<hr>
+
           </div></div>
       </div>
     </div>

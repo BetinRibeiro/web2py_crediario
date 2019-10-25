@@ -28,24 +28,24 @@
         <div class="p-4 col-md-3">
           <h2 class="mb-4">Equipe</h2>
           <ul class="text-capitalize">
-              <a href="#" class="text-dark">Funcionarios</a><br>
-              <a href="#" class="text-dark">Vendedores</a><br>
-              <a href="#" class="text-dark">Venda/Comissão</a><br>
-              <a href="#" class="text-dark">Cobrança/Saldo</a>
+              <a href="{{=URL('equipe','listar_func_venda', args=projeto.id)}}" class="text-dark">Funcionarios</a><br>
+              <a href="{{=URL('equipe','listar_vendedor', args=projeto.id)}}" class="text-dark">Vendedores</a><br>
+              <a href="{{=URL('equipe','listar_venda', args=projeto.id)}}" class="text-dark">Venda/Comissão</a><br>
+              <a href="{{=URL('equipe','listar_cobranca', args=projeto.id)}}" class="text-dark">Cobrança/Saldo</a>
             </ul>
         </div>
         <div class="p-4 col-md-3">
           <h2 class="mb-4">Despesas</h2>
           <ul class="">
-              <a href="#" class="text-dark">Desp. Local</a> <br>
-              <a href="#" class="text-dark">Desp. Venda</a> <br>
-              <a href="#" class="text-dark">Desp. Cobrança</a> <br>
+              <a href="{{=URL('despesa','listar_desp_local', args=projeto.id)}}" class="text-dark">Desp. Local</a> <br>
+              <a href="{{=URL('despesa','listar_desp_venda', args=projeto.id)}}" class="text-dark">Desp. Venda</a> <br>
+              <a href="{{=URL('despesa','listar_desp_cobranca', args=projeto.id)}}" class="text-dark">Desp. Cobrança</a> <br>
             </ul>
         </div>
         <div class="p-4 col-md-3">
           <h2 class="mb-4">Deposito</h2>
           <ul class="">
-              <a href="#" class="text-dark">Depositos/Cobrador</a><br>
+              <a href="{{=URL('deposito','listar_depositos', args=projeto.id)}}" class="text-dark">Depositos/Cobrador</a><br>
             </ul>
         </div>
       </div>

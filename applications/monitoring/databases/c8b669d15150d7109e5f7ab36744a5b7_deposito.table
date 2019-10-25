@@ -133,11 +133,11 @@ sg6
 S'valor_deposito'
 p41
 sg8
-I00
+I01
 sg9
 I512
 sg10
-S'DOUBLE'
+S'DOUBLE NOT NULL'
 p42
 sg12
 I00
@@ -223,11 +223,11 @@ sg6
 S'descricao'
 p63
 sg8
-I00
+I01
 sg9
 I512
 sg10
-S'CHAR(512)'
+S'CHAR(512) NOT NULL'
 p64
 sg12
 I00

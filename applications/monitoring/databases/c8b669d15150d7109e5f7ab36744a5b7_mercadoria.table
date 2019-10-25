@@ -274,11 +274,11 @@ sg25
 S'custo_unitario'
 p80
 sg27
-I00
+I01
 sg28
 I512
 sg29
-S'DOUBLE'
+S'DOUBLE NOT NULL'
 p81
 sg31
 I00
@@ -364,11 +364,11 @@ sg25
 S'preco_unitario'
 p102
 sg27
-I00
+I01
 sg28
 I512
 sg29
-S'DOUBLE'
+S'DOUBLE NOT NULL'
 p103
 sg31
 I00
@@ -430,11 +430,11 @@ sg25
 S'quant_pcs_enviada'
 p117
 sg27
-I00
+I01
 sg28
 I512
 sg29
-S'INTEGER'
+S'INTEGER NOT NULL'
 p118
 sg31
 I00
@@ -452,11 +452,11 @@ sg25
 S'descricao'
 p122
 sg27
-I00
+I01
 sg28
 I512
 sg29
-S'CHAR(512)'
+S'CHAR(512) NOT NULL'
 p123
 sg31
 I00
