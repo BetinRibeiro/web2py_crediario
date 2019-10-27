@@ -1,0 +1,54 @@
+{{extend 'layout.html'}}
+
+		<h2>Lista Funcionarios</h2>
+		{{=proj.nome}}
+		<a class="btn btn-secondary btn-block" href="{{=URL('inserir_funcionario', args=proj.id)}}">Inserir Funcionario</a>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                  <th>Função</th>
+                  <th>Salario</th>
+                <th>Vale</th>
+                  <th>Caderno</th>
+                      <th>Saldo</th>
+                  <th>Recebido</th>
+              </tr>
+            </thead>
+            <tbody>
+				{{salario=0.0}}
+                {{vale=0.0}}
+                {{caderno=0.0}}
+                {{rec_chegada=0.0}}
+				{{for row in rows:}}
+              <tr>
+                <th><a href="{{=URL('alterar_funcionaro', args=row.id)}}">{{=row.nome_funcionario}}</a></th>
+				<th>{{=row.funcao}}</th>
+                  <th>{{=row.salario_funcionario}}</th>
+                  <th>{{=row.vale_saida_funcionario}}</th>
+                  <th>{{=row.vale_caderno_funcionario}}</th>
+                  <th>{{=row.salario_funcionario-row.vale_saida_funcionario-row.vale_caderno_funcionario}}</th>
+                  <th>{{=row.valor_recebido_chegada}}</th>
+				{{salario+=row.salario_funcionario}}
+                {{vale+=row.vale_saida_funcionario}}
+                {{caderno+=row.vale_caderno_funcionario}}
+                {{rec_chegada+=row.valor_recebido_chegada}}
+              </tr>
+              {{pass}}
+				 <tr>
+                <th>Total</th>
+                        <th>-></th>
+				<th>{{=salario}}</th>
+                     <th>{{=vale}}</th>
+                     <th>{{=caderno}}</th>
+                     <th>-></th>
+                     <th>{{=rec_chegada}}</th>
+              </tr>
+            </tbody>
+          </table>
+                        {{proj.total_salario=salario}}
+                        {{proj.total_vale_saida_funcionario=vale}}
+                        {{proj.total_vale_caderno_funcionario=caderno}}
+                        {{proj.total_recebido_chegada_funcionario=rec_chegada}}
+                        {{proj.update_record()}}

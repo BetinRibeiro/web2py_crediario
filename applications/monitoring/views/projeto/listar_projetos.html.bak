@@ -1,16 +1,15 @@
 {{extend 'layout.html'}}
 
 
-<div class="section">
+    <div class="section">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
-			<h2>Lista dos Projetos de Venda</h2>
-			<a class="btn btn-secondary btn-block" href="{{=URL('criar_projeto')}}">Criar Projeto</a><br>
-          </div>
-          <div class="col-md-8">
-			<div class="table-responsive">
-				  <table class="table table-striped table-borderless">
+          <div class="col-md-12">
+            <h3>Lista dos Projetos de Venda</h3>
+            <a class="btn btn-secondary btn-success"
+            href="{{=URL('criar_projeto')}}">Criar Projeto</a>
+            <br>{{for row in rows:}} {{pass}}
+           <table class="table table-striped table-borderless">
 					<thead>
 					  <tr>
 						<th>Descrição</th>
@@ -24,7 +23,7 @@
 						{{for row in rows:}}
 					  <tr>
 
-						<td><a href="{{=URL('acesso_geral', args=row.id)}}">{{=row.nome}}</a></td>
+						<td><a href="{{=URL('acesso_geral_projeto', args=row.id)}}">{{=row.nome}}</a></td>
 						  
 						<td>{{=row.nome_chefe}}</td>
 						  
@@ -38,7 +37,7 @@
 					  {{pass}}
 					</tbody>
 				  </table>
-				  </div>
-				</div>
-			  </div>
-			</div>
+          </div>
+        </div>
+      </div>
+    </div>

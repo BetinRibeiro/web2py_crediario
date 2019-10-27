@@ -27,6 +27,25 @@ def inserir_vendedor():
         response.flash = 'Preencha o formulario'
     return locals()
 
+
+def inserir_funcionario():
+    proj = db.projeto(request.args(0, cast=int))
+    db.funcionario.projeto.default = proj.id
+    db.funcionario.projeto.readable = False
+    db.funcionario.projeto.writable = False
+
+
+    merc = db(db.funcionario.projeto==proj.id).select()
+    form = SQLFORM(db.funcionario).process()
+    if form.accepted:
+        response.flash = 'Formulario aceito'
+        redirect(URL('listar_func_venda', args=proj.id))
+    elif form.errors:
+        response.flash = 'Formulario não aceito'
+    else:
+        response.flash = 'Preencha o formulario'
+    return locals()
+
 def alterar_vendedor():
     merc = db.vendedor(request.args(0, cast=int))
     proj = db.projeto(merc.projeto)
@@ -94,13 +113,19 @@ def listar_cobranca():
     rows = db(db.vendedor.projeto == request.args(0, cast=int)).select()
     return locals()
 
+def listar_func_venda():
+    proj = db.projeto(request.args(0, cast=int))
+    rows = db(db.funcionario.projeto == request.args(0, cast=int)).select()
+    return locals()
 
-def alterar_vendedor():
+def alterar_vendedor_cobranca():
     merc = db.vendedor(request.args(0, cast=int))
     proj = db.projeto(merc.projeto)
     db.vendedor.projeto.default = proj.id
     db.vendedor.projeto.readable = False
     db.vendedor.projeto.writable = False
+    db.vendedor.vale_saida.readable = False
+    db.vendedor.vale_saida.writable = False
 
     db.vendedor.nome_vendedor.readable = True
     db.vendedor.nome_vendedor.writable = False

@@ -27,6 +27,25 @@ def inserir_vendedor():
         response.flash = 'Preencha o formulario'
     return locals()
 
+
+def inserir_funcionario():
+    proj = db.projeto(request.args(0, cast=int))
+    db.funcionario.projeto.default = proj.id
+    db.funcionario.projeto.readable = False
+    db.funcionario.projeto.writable = False
+
+
+    merc = db(db.funcionario.projeto==proj.id).select()
+    form = SQLFORM(db.funcionario).process()
+    if form.accepted:
+        response.flash = 'Formulario aceito'
+        redirect(URL('listar_func_venda', args=proj.id))
+    elif form.errors:
+        response.flash = 'Formulario não aceito'
+    else:
+        response.flash = 'Preencha o formulario'
+    return locals()
+
 def alterar_vendedor():
     merc = db.vendedor(request.args(0, cast=int))
     proj = db.projeto(merc.projeto)
@@ -43,6 +62,24 @@ def alterar_vendedor():
     if form.process().accepted:
         session.flash = 'atualizada'
         redirect(URL('listar_vendedor', args=proj.id))
+    elif form.errors:
+        response.flash = 'Erros no formulário!'
+    else:
+        if not response.flash:
+            response.flash = 'Preencha o formulário!'
+    return locals()
+
+
+def alterar_funcionaro():
+    merc = db.funcionario(request.args(0, cast=int))
+    proj = db.projeto(merc.projeto)
+    db.funcionario.projeto.default = proj.id
+    db.funcionario.projeto.readable = False
+    db.funcionario.projeto.writable = False
+    form = SQLFORM(db.funcionario, request.args(0, cast=int))
+    if form.process().accepted:
+        session.flash = 'atualizada'
+        redirect(URL('listar_func_venda', args=proj.id))
     elif form.errors:
         response.flash = 'Erros no formulário!'
     else:
@@ -94,6 +131,10 @@ def listar_cobranca():
     rows = db(db.vendedor.projeto == request.args(0, cast=int)).select()
     return locals()
 
+def listar_func_venda():
+    proj = db.projeto(request.args(0, cast=int))
+    rows = db(db.funcionario.projeto == request.args(0, cast=int)).select()
+    return locals()
 
 def alterar_vendedor_cobranca():
     merc = db.vendedor(request.args(0, cast=int))

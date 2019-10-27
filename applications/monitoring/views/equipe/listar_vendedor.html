@@ -15,7 +15,7 @@
     </div>
   </nav>
 
-		<h2>Lista de Envio</h2>
+		<h2>Equipe de Vendas</h2>
 		{{=proj.nome}}
 		<a class="btn btn-secondary btn-block" href="{{=URL('inserir_vendedor', args=proj.id)}}">Inserir Vendedor</a>
 
@@ -41,3 +41,5 @@
               </tr>
             </tbody>
           </table>
+{{proj.total_vale_saida_vendedor=a}}
+                        {{proj.update_record()}}

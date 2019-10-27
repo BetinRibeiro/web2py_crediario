@@ -1,15 +1,15 @@
 {{extend 'layout.html'}}
- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar10">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','acesso_geral_projeto', args=row.id)}}">Acesso Geral</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Prestação Venda</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Investimento</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Prestação Cobrança</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Relatorio Lucros</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('acesso_geral_projeto', args=projeto.id)}}">Acesso Geral</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','prestacao_venda', args=projeto.id)}}">Prestação Venda</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','investimento', args=projeto.id)}}">Investimento</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','prestacao_cobr', args=projeto.id)}}">Prestação Cobrança</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','lucros_prej', args=projeto.id)}}">Relatorio Lucros</a> </li>
         </ul>
       </div>
     </div>
@@ -28,39 +28,50 @@
               </tr>
             </thead>
             <tbody>
-				{{ptotal=0.0}}
-				{{ctotal=0.0}}
-				{{q=0.0}}
+				{{total_preco_retorno=0.0}}
+				{{total_preco_aproveitamento=0.0}}
+				{{quant_retorno=0.0}}
 				{{vc=0.0}}
 				{{vr=0.0}}
+                {{total_custo_retorno=0.0}}
+                {{total_custo_aprov_retorno=0.0}}
 				{{for row in rows:}}
               <tr>
 
                 <th>{{=row.quant_pcs_retorno}}</th>
-				<th>{{=row.descricao}}</th>
+                  <th><a href="{{=URL('alterar_merc_retorno', args=row.id)}}">{{=row.descricao}}</a></th>
 				<th>{{=row.preco_unitario}}</th>
+                  
                     {{vr=row.quant_pcs_retorno*row.preco_unitario}}
+                  
 				<th>{{=vr}}</th>
+                  
 				<th>{{=row.quant_pcs_aprov_retorno}}</th>
-                
-				{{vc=row.quant_pcs_aprov_retorno*row.custo_unitario}}
+                  
+                    {{vc=row.quant_pcs_aprov_retorno*row.custo_unitario}}
+                  
 				<th>{{=vc}}</th>
-                <th><a href="{{=URL('alterar_merc_retorno', args=row.id)}}">Alterar</a></th>
-				{{ptotal=ptotal+vr}}
-
-				{{ctotal=ctotal+vc}}
-				 {{q=q+row.quant_pcs_retorno}}
+                    {{custo_ret=(row.quant_pcs_retorno*row.custo_unitario)}}
+                    {{total_custo_retorno+=custo_ret}}
+                    {{total_preco_retorno=total_preco_retorno+vr}}
+                    {{total_preco_aproveitamento=total_preco_aproveitamento+vc}}
+                    {{quant_retorno+=row.quant_pcs_retorno}}
               </tr>
               {{pass}}
 				 <tr>
 
-                <th>{{=q}}</th>
+                <th>{{= quant_retorno }}</th>
 				<th>Total</th>
 				<th>--></th>
-				<th>{{=ptotal}}</th>
+				<th>{{=total_preco_retorno}}</th>
 					 <th>--></th>
-				<th>{{=ctotal}}</th>
+				<th>{{=total_preco_aproveitamento}}</th>
 
               </tr>
             </tbody>
           </table>
+                     {{projeto.total_quant_pcs_retorno=quant_retorno}}
+                     {{projeto.total_preco_retorno=total_preco_retorno}}
+                     {{projeto.total_custo_retorno=total_custo_retorno}}
+                     {{projeto.total_custo_aprov_retorno=total_preco_aproveitamento}}
+                        {{projeto.update_record()}}

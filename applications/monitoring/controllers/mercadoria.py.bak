@@ -138,7 +138,7 @@ def alterar_merc_devolucao():
 	form = SQLFORM(db.mercadoria, request.args(0, cast=int))
 	if form.process().accepted:
 		session.flash = 'atualizada'
-		redirect(URL('listar_merc_retorno', args=proj.id))
+		redirect(URL('listar_merc_devolucao', args=proj.id))
 	elif form.errors:
 		response.flash = 'Erros no formulário!'
 	else:

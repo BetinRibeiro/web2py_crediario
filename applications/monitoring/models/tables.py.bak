@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-Projeto = db.define_table('projeto',
+db.define_table('projeto',
 				#info_antes_venda
                 Field('nome', 'string', notnull=True, label="Nome Projeto"),
 				Field('nome_chefe', 'string', label="Nome Chefe"),
@@ -19,10 +19,10 @@ Projeto = db.define_table('projeto',
                 Field('nome_cobrador', 'string', label="Nome Cobrador"),
 				Field('comissao_cobrador', 'double', label="% Comissao Cobrador"),
 				Field('vale_cobrador', 'double', label="Vale Cobrador"),
-				Field('adiantamento_dinh_cobranca', 'double', label="Adiant Dinh Cobr"),
+				Field('adiantamento_dinh_cobranca', 'double', label="Adiant Dinh Cobr",notnull=True, default=0),
                 Field('data_saida_cobrador', 'date', label="Data saida Cobrador"),
                 #info_chegada_venda
-				Field('devolucao_dinh_cobranca', 'double', label="Devol Dinh Cobrança"),
+				Field('devolucao_dinh_cobranca', 'double', label="Devol Dinh Cobrança",notnull=True, default=0),
                 Field('data_chegada_cobrador', 'date', label="Data Chegada Cobrador"),
 
 				#informações das despesas (informação vem da tabela de despesas)
@@ -50,7 +50,7 @@ Projeto = db.define_table('projeto',
 				Field('total_salario', 'double', writable=False, readable=False, notnull=True, default=0),
 				Field('total_vale_saida_funcionario', 'double', writable=False, readable=False, notnull=True, default=0),
 				Field('total_vale_caderno_funcionario', 'double', writable=False, readable=False, notnull=True, default=0),
-                Field('total_recebido_chegada', 'double', writable=False, readable=False, notnull=True, default=0),
+                Field('total_recebido_chegada_funcionario', 'double', writable=False, readable=False, notnull=True, default=0),
 
                 #informações vendedor (informação que vem da tabela de vendedor)
 				Field('total_vale_saida_vendedor', 'double', writable=False, readable=False, notnull=True, default=0),
@@ -64,24 +64,23 @@ Projeto = db.define_table('projeto',
 				Field('total_devolvido_cobranca', 'double', writable=False, readable=False, notnull=True, default=0),
 				Field('total_prego_cobranca', 'double', writable=False, readable=False, notnull=True, default=0),
 				Field('total_recebido_chegada_cobranca_vendedor', 'double', writable=False, readable=False, notnull=True, default=0),
-				auth.signature)
+                          auth.signature)
 
-
-Deposito = db.define_table('deposito',
+db.define_table('deposito',
 				Field('projeto','reference projeto', label='Equipe',  writable=True, readable=True),
-				Field('descricao', 'string'),
-				Field('valor_deposito', 'double', writable=False, readable=False, notnull=True, default=0),
+				Field('descricao', 'string', notnull=True, default="Descrição"),
+				Field('valor_deposito', 'double', notnull=True, default=0),
 				Field('data_deposito','date'),
 				auth.signature)
 
-Despesa = db.define_table('despesa',
+db.define_table('despesa',
 				Field('projeto','reference projeto', label='Equipe', writable=True, readable=True),
 				Field('descricao', 'string', notnull=True, default="Valor Gasto"),
 				Field('valor', 'double', notnull=True, default=0),
 				Field('tipo_desp','string', writable=False, readable=False,notnull=True, default=""),
 				auth.signature)
 
-Mercadoria = db.define_table('mercadoria',
+db.define_table('mercadoria',
 				Field('projeto','reference projeto', label='Equipe', writable=True, readable=True),
 				Field('quant_pcs_enviada', 'integer', notnull=True, default=0),
 				Field('descricao', 'string', notnull=True),
@@ -93,17 +92,17 @@ Mercadoria = db.define_table('mercadoria',
 				Field('quant_pcs_aprov_devolucao', 'integer', default=0, notnull=True),
 				auth.signature)
 
-Funcionario = db.define_table('funcionario',
+db.define_table('funcionario',
 				Field('projeto','reference projeto', label='Equipe'),
 				Field('nome_funcionario', 'string'),
 				Field('funcao', 'string'),
-				Field('salario_funcionario', 'double', writable=False, readable=False, notnull=True, default=0),
-				Field('vale_saida_funcionario', 'double', writable=False, readable=False, notnull=True, default=0),
-				Field('vale_caderno_funcionario', 'double', writable=False, readable=False, notnull=True, default=0),
-				Field('valor_recebido_chegada', 'double', writable=False, readable=False, notnull=True, default=0),
+				Field('salario_funcionario', 'double',  notnull=True, default=1000),
+				Field('vale_saida_funcionario', 'double', notnull=True, default=0),
+				Field('vale_caderno_funcionario', 'double',  notnull=True, default=0),
+				Field('valor_recebido_chegada', 'double',  notnull=True, default=0),
 				auth.signature)
 
-Vendedor = db.define_table('vendedor',
+db.define_table('vendedor',
 				Field('projeto','reference projeto', label='Equipe', writable=True, readable=True),
 				Field('nome_vendedor', 'string'),
 				Field('vale_saida', 'double'),

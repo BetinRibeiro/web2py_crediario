@@ -30,10 +30,9 @@
 				{{a=0.0}}
 				{{for row in rows:}}
               <tr>
-                <th>{{=row.nome_vendedor}}</th>
+                <th><a href="{{=URL('alterar_vendedor', args=row.id)}}">{{=row.nome_vendedor}}</a></th>
 				<th>{{=row.vale_saida}}</th>
 				  {{a=a+row.vale_saida}}
-				  <th><a href="{{=URL('alterar_vendedor', args=row.id)}}">Alterar</a></th>
               </tr>
               {{pass}}
 				 <tr>
@@ -42,3 +41,5 @@
               </tr>
             </tbody>
           </table>
+{{proj.total_vale_saida_vendedor=a}}
+                        {{proj.update_record()}}

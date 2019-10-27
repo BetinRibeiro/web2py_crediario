@@ -1,6 +1,22 @@
 {{extend 'layout.html'}}
-<h1>Este é o template mercadoria/listar_merc_envio.html</h1>
-
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','acesso_geral_projeto', args=proj.id)}}">Acesso Geral</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','prestacao_venda', args=proj.id)}}">Prestação Venda</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Investimento</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Prestação Cobrança</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Relatorio Lucros</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<h3>Lista Mercadoria de Envio Para venda</h3>
+{{=proj.total_preco_envio}}
+<a class="btn btn-secondary btn-block"  href="{{=URL('inserir_merc_envio', args=proj.id)}}">Enviar Produto</a>
 
  <table class="table">
             <thead>
@@ -9,43 +25,44 @@
                 <th>Descrição</th>
                 <th>Preço</th>
                 <th>Total</th>
-				    <th>Custo</th>
+				 <th>Custo</th>
                 <th>Total</th>
               </tr>
             </thead>
             <tbody>
-				{{ptotal=0.0}}
-				{{ctotal=0.0}}
-				{{q=0.0}}
-				{{vc=0.0}}
-				{{vr=0.0}}
+				{{total_preco_mercadoria=0.0}}
+				{{total_custo_mercadoria=0.0}}
+				{{total_quant=0.0}}
+				{{total_custo=0.0}}
+				{{total_preco=0.0}}
 				{{for row in rows:}}
               <tr>
 
                 <th>{{=row.quant_pcs_enviada}}</th>
 				<th>{{=row.descricao}}</th>
 				<th>{{=row.preco_unitario}}</th>
-				{{vr=row.quant_pcs_enviada*row.preco_unitario}}
-				<th>{{=vr}}</th>
-				  <th>{{=row.custo_unitario}}</th>
-				{{vc=row.quant_pcs_enviada*row.custo_unitario}}
-				<th>{{=vc}}</th>
+				{{total_preco=row.quant_pcs_enviada*row.preco_unitario}}
+				<th>{{=total_preco}}</th>
+				<th>{{=row.custo_unitario}}</th>
+				{{total_custo=row.quant_pcs_enviada*row.custo_unitario}}
+				<th>{{=total_custo}}</th>
                 <th><a href="{{=URL('alterar_merc_enviada', args=row.id)}}">Alterar</a></th>
-				{{ptotal=ptotal+vr}}
+				{{total_preco_mercadoria=total_preco_mercadoria+total_preco}}
 
-				{{ctotal=ctotal+vc}}
-				 {{q=q+row.quant_pcs_enviada}}
+				{{total_custo_mercadoria=total_custo_mercadoria+total_custo}}
+				 {{total_quant+=row.quant_pcs_enviada}}
               </tr>
               {{pass}}
 				 <tr>
 
-                <th>{{=q}}</th>
+                <th>{{=total_quant}}</th>
 				<th>Total</th>
 				<th>--></th>
-				<th>{{=ptotal}}</th>
+				<th>{{=total_preco_mercadoria}}</th>
 					 <th>--></th>
-				<th>{{=ctotal}}</th>
-
+				<th>{{=total_custo_mercadoria}}</th>
+                     {{proj.total_preco_envio=total_preco_mercadoria}}
+                    {{proj.update_record()}}
               </tr>
             </tbody>
           </table>

@@ -2,17 +2,17 @@
 # tente algo como
 
 def listar_merc_envio():
-    proj = db.projeto(request.args(0, cast=int))
+    projeto = db.projeto(request.args(0, cast=int))
     rows = db(db.mercadoria.projeto == request.args(0, cast=int)).select()
     return locals()
 
 def listar_merc_retorno():
-    proj = db.projeto(request.args(0, cast=int))
+    projeto = db.projeto(request.args(0, cast=int))
     rows = db(db.mercadoria.projeto == request.args(0, cast=int)).select()
     return locals()
 
 def listar_merc_devolucao():
-    proj = db.projeto(request.args(0, cast=int))
+    projeto = db.projeto(request.args(0, cast=int))
     rows = db(db.mercadoria.projeto == request.args(0, cast=int)).select()
     return locals()
 

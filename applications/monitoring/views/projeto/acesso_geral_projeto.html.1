@@ -5,10 +5,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar10">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"> <a class="nav-link" href="#">Prestação Venda</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Investimento</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Prestação Cobrança</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Relatorio Lucros</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('acesso_geral_projeto', args=projeto.id)}}">Acesso Geral</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','prestacao_venda', args=projeto.id)}}">Prestação Venda</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','investimento', args=projeto.id)}}">Investimento</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','prestacao_cobr', args=projeto.id)}}">Prestação Cobrança</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','lucros_prej', args=projeto.id)}}">Relatorio Lucros</a> </li>
         </ul>
       </div>
     </div>
@@ -18,35 +19,63 @@
       <div class="row">
         <div class="p-4 col-md-3">
           <h2 class="mb-4">Mercadoria</h2>
-            <ul class="text-capitalize"> 
-              <a href="#" class="text-dark">Envio/Venda</a><br>
-              <a href="#" class="text-dark">Retorno/Venda&nbsp;</a><br>
-              <a href="#" class="text-dark">Devolução/Cobrança</a><br>
+            <ul class="text-capitalize">
+              <a href="{{=URL('mercadoria','listar_merc_envio', args=projeto.id)}}" class="text-dark">(1) - Envio/Venda</a><br>
+              <a href="{{=URL('mercadoria','listar_merc_retorno', args=projeto.id)}}" class="text-dark">(2) - Retorno/Venda</a><br>
+              <a href="{{=URL('mercadoria','listar_merc_devolucao', args=projeto.id)}}" class="text-dark">(5) - Devolução/Cobrança</a><br>
              </ul>
         </div>
         <div class="p-4 col-md-3">
           <h2 class="mb-4">Equipe</h2>
-          <ul class="text-capitalize"> 
-              <a href="#" class="text-dark">Funcionarios</a><br>
-              <a href="#" class="text-dark">Vendedores</a><br>
-              <a href="#" class="text-dark">Venda/Comissão</a><br>
-              <a href="#" class="text-dark">Cobrança/Saldo</a>
+          <ul class="text-capitalize">
+              <a href="{{=URL('equipe','listar_func_venda', args=projeto.id)}}" class="text-dark">(1) - Funcionarios</a><br>
+              <a href="{{=URL('equipe','listar_vendedor', args=projeto.id)}}" class="text-dark">(1) - Vendedores</a><br>
+              <a href="{{=URL('equipe','listar_venda', args=projeto.id)}}" class="text-dark">(2) - Venda/Comissão</a><br>
+              <a href="{{=URL('equipe','listar_cobranca', args=projeto.id)}}" class="text-dark">(5) - Cobrança/Saldo</a>
             </ul>
         </div>
         <div class="p-4 col-md-3">
           <h2 class="mb-4">Despesas</h2>
           <ul class="">
-              <a href="#" class="text-dark">Desp. Local</a> <br> 
-              <a href="#" class="text-dark">Desp. Venda</a> <br> 
-              <a href="#" class="text-dark">Desp. Cobrança</a> <br> 
+              <a href="{{=URL('despesa','listar_desp_local', args=projeto.id)}}" class="text-dark">(0) - Desp. Local</a> <br>
+              <a href="{{=URL('despesa','listar_desp_venda', args=projeto.id)}}" class="text-dark">(2) - Desp. Venda</a> <br>
+              <a href="{{=URL('despesa','listar_desp_cobranca', args=projeto.id)}}" class="text-dark">(5) - Desp. Cobrança</a> <br>
             </ul>
         </div>
         <div class="p-4 col-md-3">
           <h2 class="mb-4">Deposito</h2>
           <ul class="">
-              <a href="#" class="text-dark">Depositos/Cobrador</a><br>
+              <a href="{{=URL('deposito','listar_depositos', args=projeto.id)}}" class="text-dark">(4) - Depositos/Cobrador</a><br>
             </ul>
         </div>
       </div>
     </div>
   </div>
+<div class="col-md-6">
+                    <blockquote class="lead">
+                      <p>Fases do projeto</p>
+                      <footer>Conjunto de modulos que integran uma revenda completa</footer>
+                    </blockquote>
+                    <ol class="lead text-justify">
+                      <li>Fase (0) - Pode acontecer qualquer período do projeto, como o caso das
+                        despesas locais que podem variar de manutenção de veiculo até mesmo pagamento
+                        de aluguel do escritório.</li>
+                      <li>Fase (1) - Antes da saída da venda, formação de equipe de vendas e funcionários,
+                        definição de comissões e total da mercadoria enviada para venda, esses
+                        dados devem ser inseridos antes e durante a venda.</li>
+                      <li>Fase (2) - Na chegada da venda essa fase acontece nesse momento é contabilizado
+                        a mercadoria que retornou, as vendas e vales entregues no período da viagem
+                        utilizando dinheiro da venda, assim como as despesas que ocorreram no momento
+                        da venda.</li>
+                      <li>Fase (3) - Antes da saída da cobrança definição de cobrador como vales
+                        e comissão, definição de metas de depósitos rotas, datas de saída e finalização
+                        da cobrança.</li>
+                      <li>Fase (4) - Durante a cobrança o acontecimento mais importante que se pode
+                        ter são os depósitos, ao atualizar os depósitos o relatório de investimento
+                        melhora a analise de lucros e quanto falta para atingir o ponto de equilíbrio
+                        e retorno do investimento.e</li>
+                      <li>Fase (5) - Quando o cobrador chega a contagem das despesas, devolução
+                        de mercadoria, saldos e valores cobrados por cada vendedor, finalizando
+                        o processo do projeto.</li>
+                    </ol>
+                  </div>

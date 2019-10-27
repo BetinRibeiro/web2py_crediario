@@ -23,14 +23,14 @@
             <thead>
               <tr>
                 <th>Nome</th>
-                <th>fichas</th>
-                  <th>entrada</th>
-                  <th>venda</th>
-                <th>comissao</th> 
-                  <th>vale</th>
-                <th>caderno</th> 
-                  <th>saldo</th>
-                <th>recebido</th>
+                <th>Fichas</th>
+                  <th>Entrada</th>
+                  <th>Venda</th>
+                <th>Comissao</th> 
+                  <th>Vale</th>
+                <th>Caderno</th> 
+                  <th>Saldo</th>
+                <th>Recebido</th>
               </tr>
             </thead>
             <tbody>

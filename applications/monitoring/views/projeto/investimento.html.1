@@ -1,0 +1,80 @@
+{{extend 'layout.html'}}
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('acesso_geral_projeto', args=projeto.id)}}">Acesso Geral</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','prestacao_venda', args=projeto.id)}}">Prestação Venda</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','investimento', args=projeto.id)}}">Investimento</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','prestacao_cobr', args=projeto.id)}}">Prestação Cobrança</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','lucros_prej', args=projeto.id)}}">Relatorio Lucros</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<br><br>
+<div class="section">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <blockquote>
+                      <p>Custos e Comissão</p>
+                      <footer>Valores Fixos&nbsp;</footer>
+                    </blockquote>
+                    <ol>{{investimento=0.0}}
+                      <li>Custo Total da Compra <br>R$ {{=projeto.total_custo_envio}}0</li>{{investimento+=projeto.total_custo_envio}}<hr>
+                      <li>Total Recebido Pelos Vendedores
+                        <br>Vale da Saida  <br>R$ {{=projeto.total_vale_saida_vendedor}}{{investimento+=projeto.total_vale_saida_vendedor}}0
+                        <br>Recebido na Chegada  <br>R$ {{=projeto.total_recebido_chegada_venda_vendedor}}0</li>{{investimento+=projeto.total_recebido_chegada_venda_vendedor}}<hr>
+                      <li>Total Recebido pelos Funcionarios
+                         <br>Vale da Saida  <br>R$ {{=projeto.total_vale_saida_funcionario}}{{investimento+=projeto.total_vale_saida_funcionario}}0
+                        <br>Recebido na Chegada  <br>R$ {{=projeto.total_recebido_chegada_funcionario}}0</li>{{investimento+=projeto.total_recebido_chegada_funcionario}}<hr>
+                      <li>Total Recebido Pelo Chefe
+                        <br>Vale da Saida  <br>R$ {{=projeto.vale_saida_chefe}}{{investimento+=projeto.vale_saida_chefe}}0
+                        <br>Recebido na Chegada<br> R$ 0.00</li>{{investimento+=0}}
+                    </ol>
+                      <hr>
+                    <blockquote>
+                      <p>Despesas e Extra</p>
+                      <footer>Valores Variaveis</footer>
+                    </blockquote>
+                    <ol>
+                      <li>Despesa Local  <br>{{=projeto.total_valor_depesa_local}}</li><hr>
+                      <li>Dinheiro Emprestado para Venda  <br>{{=projeto.adiantamento_dinh_venda}}</li><hr>
+                      <li>Total Investido no Projeto  <br>{{=investimento}}
+                        <br>
+                        <br>
+                        <br>
+                      </li>
+                    </ol>
+                      <hr>
+                  </div>
+                  <div class="col-md-6">
+                    <blockquote>
+                      <p>Valor da Venda</p>
+                      <footer>Valores Fixos&nbsp;</footer>
+                    </blockquote>
+                    <ol>
+                      <li>Total da Venda</li>
+                      <li>Custo Total do Projeto</li>
+                    </ol>
+                      <hr>
+                    <blockquote>
+                      <p>Resultado Previo</p>
+                      <footer>Resultado Previo</footer>
+                    </blockquote>
+                    <ol>
+                      <li>Total Deposito</li>
+                      <li>Lucro&nbsp;</li>
+                    </ol>
+                      <hr>
+                    <div class="active progress progress-striped">
+                      <div class="progress-bar progress-bar-success" role="progressbar" style="width: 60%;">60% Complete</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>

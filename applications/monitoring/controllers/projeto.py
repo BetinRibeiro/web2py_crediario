@@ -1,16 +1,25 @@
 # -*- coding: utf-8 -*-
 # tente algo como
 def prestacao_venda():
+    projeto = db.projeto(request.args(0, cast=int))
     return locals()
-def prestacao_cobranca():
+def prestacao_cobr():
     return locals()
-
+def lucros_prej():
+    return locals()
+def investimento():
+    projeto = db.projeto(request.args(0, cast=int))
+    return locals()
+@cache.action()
 def acesso_geral_projeto():
     projeto = db.projeto(request.args(0, cast=int))
     return locals()
 
 def alterar_projeto():
     projeto = db.projeto(request.args(0, cast=int))
+
+    db.projeto.id.readable = False
+    db.projeto.id.writable = False
 
 
     db.projeto.adiantamento_dinh_cobranca.readable = False

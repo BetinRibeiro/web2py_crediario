@@ -1,14 +1,14 @@
 {{extend 'layout.html'}}
-{{extend 'layout.html'}}
+
 
     <div class="section">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-12">
 			<h2>Criando Projeto</h2>
-			  <a class="btn btn-secondary btn-block" href="{{=URL('listar_projetos')}}">Voltar</a><br>
-          </div>
-          <div class="col-md-8">
+			  
+            <a class="btn btn-secondary btn-success" href="{{=URL('listar_projetos')}}">Voltar</a>
+        
 			{{=form}}
           </div>
         </div>

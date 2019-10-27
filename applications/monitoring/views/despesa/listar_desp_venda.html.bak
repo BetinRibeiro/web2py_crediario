@@ -30,7 +30,7 @@
 				{{a=0.0}}
 				{{for row in rows:}}
               <tr>
-                <th><a href="{{=URL('alterar_desp_local', args=row.id)}}">{{=row.descricao}}</a></th>
+                <th><a href="{{=URL('alterar_desp_venda', args=row.id)}}">{{=row.descricao}}</a></th>
 				<th>{{=row.valor}}</th>
 				  {{a=a+row.valor}}
               </tr>

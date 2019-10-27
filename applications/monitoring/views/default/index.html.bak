@@ -3,57 +3,32 @@
       <div class="container">
         <div class="row">
             <div class="col-md-6">
-              <ul class="">
-                  <h4>
-                      Projeto.
-                  </h4>
-
-                <li><strike>acesso_geral_projeto</strike></li>
-                <li>
-                  <strike>relatorio_prestacao_venda</strike>
-                </li>
-                <li>
-                    <strike>relatorio_prestacao_cobranca</strike>
-                </li>
-                <li>relatorio_investimento</li>
-                <li>relatorio_demonstrativo</li>
-                <br>
-                <li><strike>criar_projeto</strike></li>
-                <li><strike>alterar_projeto</strike></li>
-                <li><strike>listar_projeto</strike></li>
-                <li>deletar_projeto</li>
-                <br>
-                <li><strike>listar_mercadoria_envio</li>
-                <li><strike>listar_mercadoria_retorno</strike></li>
-                <li><strike>listar_mercadoria_devolucao</strike></li>
-                <li><strike>inserir_mercadoria</strike></li>
-                <li><strike>alterar_mercadoria_envio</strike></li>
-                <li><strike>altear_mercadoria_retorno</strike></li>
-                <li><strike>alterar_mercadoria_devolucao</strike></li>
-                <br>
-                <li>listar_deposito</li>
-                <li>inserir_deposito</li>
-                <li>alterar_deposito</li>
-                <br>
-                <li>listar_despesa_local</li>
-                <li>listar_despesa_venda</li>
-                <li>listar_despesa_cobranca</li>
-                <li>inserir_despesa_local</li>
-                <li>inserir_despesa_venda</li>
-                <li>inserir_despesa_cobranca</li>
-                <li>altearar_despesa_local</li>
-                <li>altearar_despesa_venda</li>
-                <li>altearar_despesa_cobranca</li>
-                <br>
-                <li><strike>listar_vendedor_vale</strike></li>
-                <li><strike>listar_vendedor_venda</strike></li>
-                <li><strike>listar_vendedor_cobranca</strike></li>
-                <li><strike>listar_vendedor_saldo</strike></li>
-                <li><strike>inserir_vendedor</strike></li>
-                <li><strike>alterar_vendedor_vales</strike></li>
-                <li><strike>alterar_vendedor_venda</strike></li>
-                <li><strike>alterar_vendedor_cobranca</strike></li></strike>
-              </ul>
+              <blockquote>
+                <p>Fases do projeto</p>
+                <footer>Conjunto de modulos que integran uma revenda completa</footer>
+              </blockquote>
+              <ol class="text-justify">
+                <li>Fase (0) - Pode acontecer qualquer período do projeto, como o caso das
+                  despesas locais que podem variar de manutenção de veiculo até mesmo pagamento
+                  de aluguel do escritório.</li>
+                <li>Fase (1) - Antes da saída da venda, formação de equipe de vendas e funcionários,
+                  definição de comissões e total da mercadoria enviada para venda, esses
+                  dados devem ser inseridos antes e durante a venda.</li>
+                <li>Fase (2) - Na chegada da venda essa fase acontece nesse momento é contabilizado
+                  a mercadoria que retornou, as vendas e vales entregues no período da viagem
+                  utilizando dinheiro da venda, assim como as despesas que ocorreram no momento
+                  da venda.</li>
+                <li>Fase (3) - Antes da saída da cobrança definição de cobrador como vales
+                  e comissão, definição de metas de depósitos rotas, datas de saída e finalização
+                  da cobrança.</li>
+                <li>Fase (4) - Durante a cobrança o acontecimento mais importante que se pode
+                  ter são os depósitos, ao atualizar os depósitos o relatório de investimento
+                  melhora a analise de lucros e quanto falta para atingir o ponto de equilíbrio
+                  e retorno do investimento.e</li>
+                <li>Fase (5) - Quando o cobrador chega a contagem das despesas, devolução
+                  de mercadoria, saldos e valores cobrados por cada vendedor, finalizando
+                  o processo do projeto.</li>
+              </ol>
             </div>
 
             <div class="col-md-6">
@@ -66,14 +41,22 @@
 <li>  15% de líderes de final de semana e</li>
 <li>  5% de top líderes. </li>
 </ul><hr>
-<p>Isso mostra para a gente que existe uma boa dose de estratégia por trás da construção de uma rede e que esses percentuais fazem muito sentido. </p>
-<p>Se você os analisar, verá que espelham a estrutura de qualquer negócio tradicional onde há uma grande base de consumidores e uma quantidade menor de pessoas que participam do processo de vendas, seja em um grau maior ou menor. </p>
-<p>Por exemplo… o corpo diretivo de uma empresa não sai na rua para vender, mas ele é responsável pela estratégia comercial que possibilita que as vendas aconteçam. </p>
-<p>Os vendedores, que são em maior número que os diretores, não criam as estratégias mas vão para a rua fazer as vendas. </p>
-<p>Se a distribuição desses percentuais fosse diferente, provavelmente o negócio não funcionaria. </p>
-<p>Perceba também que todos os tipos de participantes são importantes, mas quem gera a renda residual de longo prazo são os clientes de varejo. </p>
-            <img src="https://www.pngfind.com/pngs/m/373-3730398_imagens-de-predios-em-png-png-download-predios.png"
-            class="img-responsive">
+<p>Isso mostra para a gente que existe uma boa dose de estratégia por trás
+                      da construção de uma rede e que esses percentuais fazem muito sentido.</p>
+                    <p>Se você os analisar, verá que espelham a estrutura de qualquer negócio
+                      tradicional onde há uma grande base de consumidores e uma quantidade menor
+                      de pessoas que participam do processo de vendas, seja em um grau maior
+                      ou menor.</p>
+                    <p>Por exemplo… o corpo diretivo de uma empresa não sai na rua para vender,
+                      mas ele é responsável pela estratégia comercial que possibilita que as
+                      vendas aconteçam.</p>
+                    <p>Os vendedores, que são em maior número que os diretores, não criam as
+                      estratégias mas vão para a rua fazer as vendas.</p>
+                    <p>Se a distribuição desses percentuais fosse diferente, provavelmente o
+                      negócio não funcionaria.</p>
+                    <p>Perceba também que todos os tipos de participantes são importantes, mas
+                      quem gera a renda residual de longo prazo são os clientes de varejo.</p>
+            
 <hr>
 
           </div></div>

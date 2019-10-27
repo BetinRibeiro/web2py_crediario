@@ -1,4 +1,19 @@
 {{extend 'layout.html'}}
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="{{=URL('projeto','acesso_geral_projeto', args=proj.id)}}">Acesso Geral</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Prestação Venda</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Investimento</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Prestação Cobrança</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Relatorio Lucros</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 <h3>Lista Mercadoria de retorno</h3>
 
  <table class="table">
@@ -13,38 +28,46 @@
               </tr>
             </thead>
             <tbody>
-				{{ptotal=0.0}}
-				{{ctotal=0.0}}
-				{{q=0.0}}
+				{{total_preco_retorno=0.0}}
+				{{total_preco_aproveitamento=0.0}}
+				{{quant_retorno=0.0}}
 				{{vc=0.0}}
 				{{vr=0.0}}
+                {{=total_custo_retorno=0}}
+                {{=total_custo_aprov_retorno=0}}
 				{{for row in rows:}}
               <tr>
 
                 <th>{{=row.quant_pcs_retorno}}</th>
 				<th>{{=row.descricao}}</th>
 				<th>{{=row.preco_unitario}}</th>
-				
+                    {{vr=row.quant_pcs_retorno*row.preco_unitario}}
 				<th>{{=vr}}</th>
 				<th>{{=row.quant_pcs_aprov_retorno}}</th>
-				
+                {{total_custo_retorno+= (row.quant_pcs_retorno*row.custo_unitario)}}
+				{{vc=row.quant_pcs_aprov_retorno*row.custo_unitario}}
 				<th>{{=vc}}</th>
-                <th><a href="{{=URL('alterar_merc_enviada', args=row.id)}}">Alterar</a></th>
-				{{ptotal=ptotal+vr}}
+                <th><a href="{{=URL('alterar_merc_retorno', args=row.id)}}">Alterar</a></th>
+				{{total_preco_retorno=total_preco_retorno+vr}}
 
-				{{ctotal=ctotal+vc}}
-				 {{q=q+row.quant_pcs_retorno}}
+				{{total_preco_aproveitamento=total_preco_aproveitamento+vc}}
+				 {{ quant_retorno +=row.quant_pcs_retorno}}
               </tr>
               {{pass}}
 				 <tr>
 
-                <th>{{=q}}</th>
+                <th>{{= quant_retorno }}</th>
 				<th>Total</th>
 				<th>--></th>
-				<th>{{=ptotal}}</th>
+				<th>{{=total_preco_retorno}}</th>
 					 <th>--></th>
-				<th>{{=ctotal}}</th>
+				<th>{{=total_preco_aproveitamento}}</th>
 
               </tr>
             </tbody>
           </table>
+ {{proj.total_quant_pcs_retorno=quant_retorno}}
+ {{proj.total_preco_retorno=total_preco_retorno}}
+                     {{proj.total_custo_retorno=total_custo_retorno}}
+                     {{proj.total_custo_aprov_retorno=total_preco_aproveitamento}}
+                    {{proj.update_record()}}
