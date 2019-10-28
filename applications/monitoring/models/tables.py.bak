@@ -64,7 +64,7 @@ db.define_table('projeto',
 				Field('total_devolvido_cobranca', 'double', writable=False, readable=False, notnull=True, default=0),
 				Field('total_prego_cobranca', 'double', writable=False, readable=False, notnull=True, default=0),
 				Field('total_recebido_chegada_cobranca_vendedor', 'double', writable=False, readable=False, notnull=True, default=0),
-                          auth.signature)
+                auth.signature)
 
 db.define_table('deposito',
 				Field('projeto','reference projeto', label='Equipe',  writable=True, readable=True),
